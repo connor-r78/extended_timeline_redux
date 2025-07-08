@@ -1,0 +1,59 @@
+add_namespace = USA1960
+
+country_event = {
+	id = USA1960.1
+	title = "[?global.year] Detroit riot"
+	desc = USA1960.1.d
+	picture = GFX_idi_amin_india
+	is_triggered_only = yes
+	trigger = {
+		original_tag = USA
+		393 = {
+			is_controlled_by = USA
+		}
+		date > 1967.7.28
+		date < 1968.1.1
+	}
+	fire_only_once = yes
+	option = { # 
+		name = "Horrible!"
+	}
+	option = { # 
+		name = "We will rise up!"
+		trigger = {
+			has_stability < 0.3
+		}
+		every_state = {
+			limit = {
+				is_controlled_by = USA
+				OR = {
+					state = 364
+					state = 365
+					state = 367
+					state = 370
+					state = 371
+					state = 1096
+					state = 1097
+					state = 1098
+					state = 1269
+					state = 1270
+				}
+			}
+			transfer_state_to = NAF
+			add_core_of = NAF
+		}
+		declare_war_on = {
+			target = NAF
+			type = annex_everything
+		}
+		NAF = {
+			promote_leader = NAF_robert_williams
+			set_politics = {
+				ruling_party = communism
+				long_name = "Communist Party of the Republic of New Africa"
+				name = CPRNA
+			}
+			change_tag_from = ROOT
+		}
+	}
+}

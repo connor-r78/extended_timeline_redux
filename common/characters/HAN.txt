@@ -1,0 +1,158 @@
+characters={
+							HAN_putter={
+		name=HAN_CHARACTER_PUTTER
+		portraits={
+                        army={
+				small="GFX_idea_han_putter_small"
+			}
+			civilian = {
+				large = GFX_portrait_han_putter_large
+			}
+		}
+		advisor={
+                        can_be_fired = no
+			slot = political_advisor
+			idea_token = HAN_putter
+			allowed  = {
+				original_tag  = HAN
+			}
+			available  = {
+		        }
+			traits  = {
+				professoroflaw
+			}
+			on_add  = {
+			}
+			do_effect  = {
+			}
+			ai_will_do  = {
+				factor  = 1.000
+			}
+		}
+	}
+			HAN_schlozer={
+		name=HAN_CHARACTER_SCHLOZER
+		portraits={
+			civilian={
+				large="GFX_portrait_han_schlozer_large"
+			}
+		}
+		country_leader={
+			ideology=socialism
+			desc = HAN_SCHLOZER_DESC
+			expire="1797.1.1"
+		}
+}
+		HAN_hermann={
+		name=HAN_CHARACTER_HERMANN
+		portraits={
+			civilian={
+				large="GFX_portrait_han_hermann_large"
+			}
+		}
+		country_leader={
+			ideology=despotism
+			traits={Hohenzollern}
+			desc = HAN_HERMANN_DESC
+			expire="1797.1.1"
+		}
+}
+		HAN_william={
+		name=HAN_CHARACTER_WILLIAM
+		portraits={
+			civilian={
+				large="GFX_portrait_han_william_large"
+			}
+		}
+		country_leader={
+			ideology=despotism
+			traits={Brunswick-Bevern}
+			desc = HAN_WILLIAM_DESC
+			expire="1797.1.1"
+		}
+}
+	HAN_charlesii={
+		name=HAN_CHARACTER_CHARLESII
+		portraits={
+			civilian={
+				large="GFX_portrait_han_charlesii_large"
+			}
+		}
+		country_leader={
+			ideology=despotism
+			traits={Brunswick-Bevern}
+			desc = HAN_CHARLESII_DESC
+			expire="1797.1.1"
+		}
+}
+	HAN_frederickwilliam={
+		name=HAN_CHARACTER_FREDERICKWILLIAM
+		portraits={
+			civilian={
+				large="GFX_portrait_han_frederickwilliam_large"
+			}
+		}
+		country_leader={
+			ideology=despotism
+			traits={Brunswick-Bevern}
+			desc = HAN_FREDERICKWILLIAM_DESC
+			expire="1797.1.1"
+		}
+}
+	HAN_charleswilliamferdinand={
+		name=HAN_CHARACTER_CHARLESWILLIAMFERDINAND
+		portraits={
+			civilian={
+				large="GFX_portrait_han_charleswilliamferdinand_large"
+			}
+		}
+		country_leader={
+			ideology=despotism
+			traits={Brunswick-Bevern}
+			desc = HAN_CHARLESWILLIAMFERDINAND_DESC
+			expire="1797.1.1"
+		}
+}
+	HAN_georgeiiihan={
+		name=HAN_CHARACTER_GEORGEIIIHAN
+		portraits={
+			civilian={
+				large="GFX_portrait_han_georgeiiihan_large"
+			}
+		}
+		country_leader={
+			ideology=despotism
+			traits={Hanover}
+			desc = HAN_GEORGEIIIHAN_DESC
+			expire="1797.1.1"
+		}
+}
+	HAN_georgeivhan={
+		name=HAN_CHARACTER_GEORGEIVHAN
+		portraits={
+			civilian={
+				large="GFX_portrait_han_georgeivhan_large"
+			}
+		}
+		country_leader={
+			ideology=despotism
+			traits={Hanover}
+			desc = HAN_GEORGEIVHAN_DESC
+			expire="1797.1.1"
+		}
+}
+	HAN_williamivhan={
+		name=HAN_CHARACTER_WILLIAMIVHAN
+		portraits={
+			civilian={
+				large="GFX_portrait_han_williamivhan_large"
+			}
+		}
+		country_leader={
+			ideology=despotism
+			traits={Hanover}
+			desc = HAN_WILLIAMIVHAN_DESC
+			expire="1797.1.1"
+		}
+}
+}

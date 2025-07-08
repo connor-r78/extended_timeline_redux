@@ -1,0 +1,39 @@
+political_actions = {
+
+	extend_martial_law  = {
+
+		priority = 100
+
+		allowed = {  
+			original_tag = UKR
+		}
+
+		activation = { 
+			always = no
+		}
+
+		available = {
+			always = no
+		}
+	
+		days_mission_timeout = 90 
+		selectable_mission = no
+
+		timeout_effect = {
+			if = {
+				limit = {
+					has_war = yes
+				}
+				activate_mission = extend_martial_law
+			}
+			else = {
+				remove_ideas = martial_law
+				add_timed_idea = {
+					idea = UKR_recovering_from_civil_war
+					days = 180
+				}
+			}
+		}
+
+	}
+}

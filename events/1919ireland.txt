@@ -1,0 +1,88 @@
+add_namespace = IRE1919
+
+country_event = {
+	id = IRE1919.1
+	title = "[?global.year] Detroit riot"
+	desc = IRE1919.1.d
+	picture = GFX_idi_amin_india
+	is_triggered_only = yes
+	trigger = {
+		original_tag = ENG
+		any_state = {
+			region = 4
+			is_controlled_by = ENG
+		}
+		date > 1919.1.21
+	}
+	fire_only_once = yes
+	option = { # 
+		name = "Croppies Lie Down!"
+		every_state = {
+			limit = {
+				is_controlled_by = ENG
+				region = 4
+			}
+			transfer_state_to = IRE
+		}
+		declare_war_on = {
+			target = IRE
+			type = annex_everything
+		}
+		IRE = {
+			promote_character = IRE_cathal_brugha
+			set_politics = {
+				ruling_party = democratic
+				elections_allowed = yes
+				last_election = "1918.12.4"
+				election_frequency = 60
+			}
+			set_party_name = {
+				ideology = democratic
+				long_name = "Sinn Féin"
+				name = "Sinn Féin"
+			}
+			set_popularities = {
+				democratic = 96.9
+				communism = 3.1
+			}
+		}
+	}
+	option = { # 
+		name = "Éirinn go Brách!"
+		trigger = {
+			IRE = {
+				is_ai = yes
+			}
+		}
+		every_state = {
+			limit = {
+				is_controlled_by = ENG
+				region = 4
+			}
+			transfer_state_to = IRE
+		}
+		declare_war_on = {
+			target = IRE
+			type = annex_everything
+		}
+		IRE = {
+			promote_character = IRE_cathal_brugha
+			set_politics = {
+				ruling_party = democratic
+				elections_allowed = yes
+				last_election = "1918.12.4"
+				election_frequency = 60
+			}
+			set_party_name = {
+				ideology = democratic
+				long_name = "Sinn Féin"
+				name = "Sinn Féin"
+			}
+			set_popularities = {
+				democratic = 96.9
+				communism = 3.1
+			}
+			change_tag_from = ENG
+		}
+	}
+}

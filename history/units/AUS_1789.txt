@@ -1,0 +1,354 @@
+﻿division_template = {
+	name = "Austrian Division"
+
+	division_names_group = AUS_Inf_01
+
+regiments = {
+        infantry = { x = 0 y = 0 }
+        infantry = { x = 1 y = 0 }
+        infantry = { x = 2 y = 0 }
+        infantry = { x = 0 y = 1 }
+        infantry = { x = 1 y = 1 }
+        infantry = { x = 2 y = 1 }
+		infantry = { x = 0 y = 2 }
+        artillery_brigade = { x = 3 y = 0 }
+		artillery_brigade = { x = 3 y = 1 }
+    }
+	priority = 2
+}
+units = {
+	#Austrian Army
+	division = {
+		name = "Austrian Division"
+		location = 11640
+		division_template = "Austrian Division"
+		start_experience_factor = 0.3
+	}
+}
+units = {
+	#Austrian Army
+	division = {
+		name = "Austrian Division"
+		location = 3614
+		division_template = "Austrian Division"
+		start_experience_factor = 0.3
+	}
+}
+units = {
+	#Austrian Army
+	division = {
+		name = "Austrian Division"
+		location = 11666
+		division_template = "Austrian Division"
+		start_experience_factor = 0.3
+	}
+}
+units = {
+	#Austrian Army
+	division = {
+		name = "Austrian Division"
+		location = 9595
+		division_template = "Austrian Division"
+		start_experience_factor = 0.3
+	}
+}
+units = {
+	#Austrian Army
+	division = {
+		name = "Austrian Division"
+		location = 9627
+		division_template = "Austrian Division"
+		start_experience_factor = 0.3
+	}
+}
+units = {
+	#Austrian Army
+	division = {
+		name = "Austrian Division"
+		location = 6626
+		division_template = "Austrian Division"
+		start_experience_factor = 0.3
+	}
+}
+units = {
+	#Austrian Army
+	division = {
+		name = "Austrian Division"
+		location = 690
+		division_template = "Austrian Division"
+		start_experience_factor = 0.3
+	}
+}
+units = {
+	#Austrian Army
+	division = {
+		name = "Austrian Division"
+		location = 14223
+		division_template = "Austrian Division"
+		start_experience_factor = 0.3
+	}
+}
+units = {
+	#Austrian Army
+	division = {
+		name = "Austrian Division"
+		location = 11581
+		division_template = "Austrian Division"
+		start_experience_factor = 0.3
+	}
+}
+units = {
+	#Austrian Army
+	division = {
+		name = "Austrian Division"
+		location = 9660
+		division_template = "Austrian Division"
+		start_experience_factor = 0.3
+	}
+}
+units = {
+	#Austrian Army
+	division = {
+		name = "Austrian Division"
+		location = 11542
+		division_template = "Austrian Division"
+		start_experience_factor = 0.3
+	}
+}
+units = {
+	#Austrian Army
+	division = {
+		name = "Austrian Division"
+		location = 3569
+		division_template = "Austrian Division"
+		start_experience_factor = 0.3
+	}
+}
+units = {
+	#Austrian Army
+	division = {
+		name = "Austrian Division"
+		location = 619
+		division_template = "Austrian Division"
+		start_experience_factor = 0.3
+	}
+}
+units = {
+	#Austrian Army
+	division = {
+		name = "Austrian Division"
+		location = 11666
+		division_template = "Austrian Division"
+		start_experience_factor = 0.3
+	}
+}
+units = {
+	#Austrian Army
+	division = {
+		name = "Austrian Division"
+		location = 11577
+		division_template = "Austrian Division"
+		start_experience_factor = 0.3
+	}
+}
+units = {
+	#Austrian Army
+	division = {
+		name = "Austrian Division"
+		location = 9627
+		division_template = "Austrian Division"
+		start_experience_factor = 0.3
+	}
+}
+units = {
+	#Austrian Army
+	division = {
+		name = "Austrian Division"
+		location = 6626
+		division_template = "Austrian Division"
+		start_experience_factor = 0.3
+	}
+}
+units = {
+	#Austrian Army
+	division = {
+		name = "Austrian Division"
+		location = 690
+		division_template = "Austrian Division"
+		start_experience_factor = 0.3
+	}
+}
+units = {
+	#Austrian Army
+	division = {
+		name = "Austrian Division"
+		location = 14223
+		division_template = "Austrian Division"
+		start_experience_factor = 0.3
+	}
+}
+units = {
+	#Austrian Army
+	division = {
+		name = "Austrian Division"
+		location = 11581
+		division_template = "Austrian Division"
+		start_experience_factor = 0.3
+	}
+}
+units = {
+	#Austrian Army
+	division = {
+		name = "Austrian Division"
+		location = 9660
+		division_template = "Austrian Division"
+		start_experience_factor = 0.3
+	}
+}
+units = {
+	#Austrian Army
+	division = {
+		name = "Austrian Division"
+		location = 11542
+		division_template = "Austrian Division"
+		start_experience_factor = 0.3
+	}
+}
+units = {
+	#Austrian Army
+	division = {
+		name = "Austrian Division"
+		location = 3569
+		division_template = "Austrian Division"
+		start_experience_factor = 0.3
+	}
+}
+units = {
+	#Austrian Army
+	division = {
+		name = "Austrian Division"
+		location = 619
+		division_template = "Austrian Division"
+		start_experience_factor = 0.3
+	}
+}
+units = {
+	#Austrian Army
+	division = {
+		name = "Austrian Division"
+		location = 11666
+		division_template = "Austrian Division"
+		start_experience_factor = 0.3
+	}
+}
+units = {
+	#Austrian Army
+	division = {
+		name = "Austrian Division"
+		location = 13657
+		division_template = "Austrian Division"
+		start_experience_factor = 0.3
+	}
+}
+units = {
+	#Austrian Army
+	division = {
+		name = "Austrian Division"
+		location = 13837
+		division_template = "Austrian Division"
+		start_experience_factor = 0.3
+	}
+}
+units = {
+	#Austrian Army
+	division = {
+		name = "Austrian Division"
+		location = 9627
+		division_template = "Austrian Division"
+		start_experience_factor = 0.3
+	}
+}
+units = {
+	#Austrian Army
+	division = {
+		name = "Austrian Division"
+		location = 6626
+		division_template = "Austrian Division"
+		start_experience_factor = 0.3
+	}
+}
+units = {
+	#Austrian Army
+	division = {
+		name = "Austrian Division"
+		location = 690
+		division_template = "Austrian Division"
+		start_experience_factor = 0.3
+	}
+}
+units = {
+	#Austrian Army
+	division = {
+		name = "Austrian Division"
+		location = 14223
+		division_template = "Austrian Division"
+		start_experience_factor = 0.3
+	}
+}
+units = {
+	#Austrian Army
+	division = {
+		name = "Austrian Division"
+		location = 11581
+		division_template = "Austrian Division"
+		start_experience_factor = 0.3
+	}
+}
+units = {
+	#Austrian Army
+	division = {
+		name = "Austrian Division"
+		location = 9660
+		division_template = "Austrian Division"
+		start_experience_factor = 0.3
+	}
+}
+units = {
+	#Austrian Army
+	division = {
+		name = "Austrian Division"
+		location = 11542
+		division_template = "Austrian Division"
+		start_experience_factor = 0.3
+	}
+}
+units = {
+	#Austrian Army
+	division = {
+		name = "Austrian Division"
+		location = 3569
+		division_template = "Austrian Division"
+		start_experience_factor = 0.3
+	}
+}
+units = {
+	#Austrian Army
+	division = {
+		name = "Austrian Division"
+		location = 619
+		division_template = "Austrian Division"
+		start_experience_factor = 0.3
+	}
+}
+### Starting Equipment ###
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = infantry_equipment_0
+			creator = "AUS"
+		}
+		requested_factories = 1
+		progress = 0.28
+		efficiency = 100
+	}
+}

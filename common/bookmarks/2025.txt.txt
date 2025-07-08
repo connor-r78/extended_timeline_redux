@@ -1,0 +1,86 @@
+bookmarks = {
+	bookmark = {
+		name = "The Modern Day"
+		desc = "2025_DESC"
+		date = 2025.7.8.1
+		picture = "GFX_ukraine_russia_war_2025"
+		default_country = "UKR"
+	
+		FRA = {
+			history = OTHER_BLITZKRIEG_DESC
+			ideology = democratic
+			ideas={
+			}
+			focuses = {
+
+			}
+		}
+		ENG = {
+			history = OTHER_BLITZKRIEG_DESC
+			ideology = democratic
+			ideas={
+			}
+			focuses = {
+
+			}
+		}
+		RUS = {
+			history = OTHER_BLITZKRIEG_DESC
+			ideology = communism
+			ideas={
+			}
+			focuses = {
+
+			}
+		}
+		USA = {
+			history = OTHER_BLITZKRIEG_DESC
+			ideology = neutrality
+			ideas={
+			}
+			focuses = {
+
+			}
+		}
+		ITA = {
+			history = OTHER_BLITZKRIEG_DESC
+			ideology = democratic
+			ideas={
+			}
+			focuses = {
+
+			}
+		}
+		PRC = {
+			history = OTHER_BLITZKRIEG_DESC
+			ideology = democratic
+			ideas={
+			}
+			focuses = {
+
+			}
+		}
+		JAP = {
+			history = OTHER_BLITZKRIEG_DESC
+			ideology = democratic
+			ideas={
+			}
+			focuses = {
+
+			}
+		}
+		GER = {
+			history = OTHER_BLITZKRIEG_DESC
+			ideology = democratic
+			ideas={
+			}
+			focuses = {
+
+			}
+		}
+		effect = {
+			randomize_weather = 12345 # <- Obligatory in every bookmark !
+			#123 = { rain_light = yes }
+		}
+	}
+}

@@ -1,0 +1,16 @@
+add_namespace = COL1836
+
+country_event = {
+	id = COL1836.1
+	title = "[FROM.GetNonIdeologyName] Proposes Treaty"
+	desc = COL1836.1.d
+	picture = GFX_idi_amin_india
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = { # 
+		name = "Agreeable"
+	}
+	option = { # 
+		name = "Unfortunately, no."
+	}
+}

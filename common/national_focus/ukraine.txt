@@ -1,0 +1,588 @@
+﻿
+
+focus_tree = {
+	id = ukraine_focus
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = UKR
+		}
+	}
+	
+	default = no
+
+	focus = {
+		id = ukraine_2025_focus_1 # Empowering the Army
+		icon = GFX_goal_generic_allies_build_infantry
+		x = 10
+		y = 0
+
+		mutually_exclusive = { focus = ukraine_2025_focus_5 }
+
+		allow_branch = {
+			has_start_date > 2024.2.8
+		}
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = ukraine_2025_focus_2 # Stay With Syrski
+		icon = GFX_goal_generic_allies_build_infantry
+		relative_position_id = ukraine_2025_focus_1
+
+		x = 1
+		y = 1
+
+		prerequisite = { focus = ukraine_2025_focus_1 }
+		mutually_exclusive = { focus = ukraine_2025_focus_3 }
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_stability = 0.1
+			custom_effect_tooltip = ukraine_2025_focus_2tt
+		}
+	}
+
+	focus = {
+		id = ukraine_2025_focus_3 # People Love Zaluzhnyi
+		icon = GFX_goal_generic_allies_build_infantry
+		relative_position_id = ukraine_2025_focus_1
+
+		x = -1
+		y = 1
+
+		prerequisite = { focus = ukraine_2025_focus_1 }
+		mutually_exclusive = { focus = ukraine_2025_focus_2 }
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		completion_reward = {
+			remove_ideas = UKR_oleksandr_syrskyi
+			add_ideas = UKR_valerii_zaluzhnyi
+		}
+	}
+
+	focus = {
+		id = ukraine_2025_focus_6 # President Syrski
+		icon = GFX_goal_generic_allies_build_infantry
+		relative_position_id = ukraine_2025_focus_2
+
+		x = 0
+		y = 1
+
+		prerequisite = { focus = ukraine_2025_focus_2 }
+		prerequisite = { focus = ukraine_2025_focus_4 }
+
+		mutually_exclusive = { focus = ukraine_2025_focus_7 }
+		mutually_exclusive = { focus = ukraine_2025_focus_12 }
+		mutually_exclusive = { focus = ukraine_2025_focus_14 }
+		mutually_exclusive = { focus = ukraine_2025_focus_15 }
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		completion_reward = {
+		}
+	}
+
+	focus = {
+		id = ukraine_2025_focus_4 # Hold Elections
+		icon = GFX_goal_generic_allies_build_infantry
+		relative_position_id = ukraine_2025_focus_1
+
+		x = 6
+		y = 1
+
+		allow_branch = {
+			has_start_date > 2024.2.8
+		}
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			NOT = {
+				has_idea = martial_law
+				has_idea = UKR_recovering_from_civil_war
+			}
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		completion_reward = {
+			set_country_flag = postmartiallaw
+			custom_effect_tooltip = "A presidential election will be held."
+			hidden_effect = {
+				hold_election = yes
+				set_politics = {
+					ruling_party = var:ROOT.current_party_ideology_group
+					elections_allowed = yes
+					election_frequency = 60
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = ukraine_2025_focus_7 # 5 More Years
+		icon = GFX_goal_generic_allies_build_infantry
+		relative_position_id = ukraine_2025_focus_4
+
+		x = 3
+		y = 1
+
+		prerequisite = { focus = ukraine_2025_focus_4 }
+
+		mutually_exclusive = { focus = ukraine_2025_focus_6 }
+		mutually_exclusive = { focus = ukraine_2025_focus_12 }
+		mutually_exclusive = { focus = ukraine_2025_focus_14 }
+		mutually_exclusive = { focus = ukraine_2025_focus_15 }
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		completion_reward = {
+		}
+	}
+
+	focus = {
+		id = ukraine_2025_focus_14 # President Biletsky
+		icon = GFX_goal_generic_allies_build_infantry
+		relative_position_id = ukraine_2025_focus_4
+
+		x = 1
+		y = 1
+
+		prerequisite = { focus = ukraine_2025_focus_4 }
+
+		mutually_exclusive = { focus = ukraine_2025_focus_6 }
+		mutually_exclusive = { focus = ukraine_2025_focus_7 }
+		mutually_exclusive = { focus = ukraine_2025_focus_12 }
+		mutually_exclusive = { focus = ukraine_2025_focus_15 }
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		completion_reward = {
+		}
+	}
+
+	focus = {
+		id = ukraine_2025_focus_15 # President Arestovych
+		icon = GFX_goal_generic_allies_build_infantry
+		relative_position_id = ukraine_2025_focus_4
+
+		x = -1
+		y = 1
+
+		prerequisite = { focus = ukraine_2025_focus_4 }
+
+		mutually_exclusive = { focus = ukraine_2025_focus_6 }
+		mutually_exclusive = { focus = ukraine_2025_focus_7 }
+		mutually_exclusive = { focus = ukraine_2025_focus_12 }
+		mutually_exclusive = { focus = ukraine_2025_focus_14 }
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		completion_reward = {
+		}
+	}
+
+	focus = {
+		id = ukraine_2025_focus_12 # President Zaluzhnyi
+		icon = GFX_goal_generic_allies_build_infantry
+		relative_position_id = ukraine_2025_focus_4
+
+		x = -3
+		y = 1
+
+		prerequisite = { focus = ukraine_2025_focus_4 }
+
+		mutually_exclusive = { focus = ukraine_2025_focus_6 }
+		mutually_exclusive = { focus = ukraine_2025_focus_7 }
+		mutually_exclusive = { focus = ukraine_2025_focus_14 }
+		mutually_exclusive = { focus = ukraine_2025_focus_15 }
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		completion_reward = {
+		}
+	}
+
+	focus = {
+		id = ukraine_2025_focus_5 # A Swift End
+		icon = GFX_goal_generic_allies_build_infantry
+		relative_position_id = ukraine_2025_focus_1
+
+		x = -5
+		y = 0
+
+		allow_branch = {
+			has_start_date > 2024.2.8
+		}
+
+		mutually_exclusive = { focus = ukraine_2025_focus_1 }
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = ukraine_2025_focus_13 # Open Peace Talks
+		icon = GFX_goal_generic_allies_build_infantry
+		relative_position_id = ukraine_2025_focus_5
+
+		x = 0
+		y = 1
+
+		prerequisite = { focus = ukraine_2025_focus_5 }
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		completion_reward = {
+			country_event = UKR2025.2
+		}
+	}
+
+	focus = {
+		id = ukraine_2025_focus_8 # Our Own Identity
+		icon = GFX_goal_generic_allies_build_infantry
+		relative_position_id = ukraine_2025_focus_1
+
+		x = -10
+		y = 0
+
+		allow_branch = {
+			is_subject = yes
+		}
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_war_support = 0.1
+			add_stability = 0.1
+		}
+	}
+
+	focus = {
+		id = ukraine_2025_focus_9 # The War of Resistance
+		icon = GFX_goal_generic_allies_build_infantry
+		relative_position_id = ukraine_2025_focus_8
+
+		x = 0
+		y = 1
+
+		prerequisite = { focus = ukraine_2025_focus_8 }
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		completion_reward = {
+			set_country_flag = resistance_war
+			declare_war_on = {
+				target = ROOT.overlord
+				type = annex_everything
+			}
+		}
+	}
+
+	focus = {
+		id = ukraine_2025_focus_10 # Under the Hetman
+		icon = GFX_goal_generic_allies_build_infantry
+		relative_position_id = ukraine_2025_focus_9
+
+		x = -1
+		y = 1
+
+		prerequisite = { focus = ukraine_2025_focus_9 }
+
+		mutually_exclusive = { focus = ukraine_2025_focus_11 }
+
+		allow_branch = {
+			OR = {
+				has_country_flag = resistance_war
+				is_subject = yes
+			}
+		}
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		completion_reward = {
+			if = {
+				limit = {
+					has_government = neutrality
+				}
+				add_popularity = {
+					ideology = neutrality
+					popularity = 0.5
+				}
+				add_stability = 0.1
+			}
+			else = {
+				add_popularity = {
+					ideology = neutrality
+					popularity = 0.5
+				}
+				start_civil_war = {
+					ruling_party = neutrality
+					ideology = ROOT
+					size = 0.5
+					states = all
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = ukraine_2025_focus_11 # Under No Man
+		icon = GFX_goal_generic_allies_build_infantry
+		relative_position_id = ukraine_2025_focus_9
+
+		x = 1
+		y = 1
+
+		prerequisite = { focus = ukraine_2025_focus_9 }
+
+		mutually_exclusive = { focus = ukraine_2025_focus_10 }
+
+		allow_branch = {
+			OR = {
+				has_country_flag = resistance_war
+				is_subject = yes
+			}
+		}
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		completion_reward = {
+			if = {
+				limit = {
+					has_government = anarchy
+				}
+				add_popularity = {
+					ideology = neutrality
+					popularity = 0.5
+				}
+				add_stability = 0.1
+			}
+			else = {
+				add_popularity = {
+					ideology = anarchy
+					popularity = 0.5
+				}
+				start_civil_war = {
+					ruling_party = anarchy
+					ideology = ROOT
+					size = 0.5
+					states = all
+				}
+			}
+		}
+	}
+
+}

@@ -1,0 +1,62 @@
+characters={
+					HSE_waitzvoneschen={
+		name=HSE_CHARACTER_WAITZVONESCHEN
+		portraits={
+                        army={
+				small="GFX_idea_hse_waitzvoneschen_small"
+			}
+			civilian = {
+				large = GFX_portrait_hse_waitzvoneschen_large
+			}
+		}
+		advisor={
+                        can_be_fired = no
+			slot = political_advisor
+			idea_token = HSE_waitzvoneschen
+			allowed  = {
+				original_tag  = HSE
+			}
+			available  = {
+		        }
+			traits  = {
+				basel_diplomat
+			}
+			on_add  = {
+			}
+			do_effect  = {
+			}
+			ai_will_do  = {
+				factor  = 1.000
+			}
+		}
+	}
+	HSE_williami={
+		name=HSE_CHARACTER_WILLIAMI
+		portraits={
+			civilian={
+				large="GFX_portrait_hse_williami_large"
+			}
+		}
+		country_leader={
+			ideology=despotism
+			traits={Hesse}
+			desc = HSE_WILLIAMI_DESC
+			expire="1797.1.1"
+		}
+}
+	HSE_williamii={
+		name=HSE_CHARACTER_WILLIAMII
+		portraits={
+			civilian={
+				large="GFX_portrait_hse_williamii_large"
+			}
+		}
+		country_leader={
+			ideology=despotism
+			traits={Hesse}
+			desc = HSE_WILLIAMII_DESC
+			expire="1797.1.1"
+		}
+}
+}
+

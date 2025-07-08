@@ -1,0 +1,197 @@
+###########################
+# Europe Province Rework Events
+###########################
+
+add_namespace = UKR2025
+
+country_event = {
+	id = UKR2025.1
+	title = "The [?global.year] Ukrainian presidential elections"
+	desc = UKR2025.1.d
+	picture = GFX_idi_amin_india
+	is_triggered_only = yes
+	trigger = {
+		has_country_flag = postmartiallaw
+		original_tag = UKR
+	}
+	fire_only_once = yes
+	option = { # 
+		name = "Five More Years!"
+		trigger = {
+			has_country_leader = {
+				character = UKR_volodymyr_zelenskyy
+				ruling_only = yes
+			}
+			democratic > 0.5
+		}
+		clr_country_flag = postmartiallaw
+		hidden_effect = {
+			complete_national_focus = ukraine_2025_focus_7
+		}
+	}
+	option = { # 
+		name = "Sryski got us through the war."
+		trigger = {
+			has_completed_focus = ukraine_2025_focus_2
+			authoritarianism > 0.5
+		}
+		clr_country_flag = postmartiallaw
+		hidden_effect = {
+			set_politics = {
+				ruling_party = authoritarianism
+				elections_allowed = yes
+				election_frequency = 60
+			}
+			complete_national_focus = ukraine_2025_focus_6
+		}
+		promote_leader = UKR_oleksandr_syrskyi
+	}
+	option = { # 
+		name = "Our Hero: Zaluzhnyi"
+		trigger = {
+			authoritarianism > 0.5
+		}
+		clr_country_flag = postmartiallaw
+		hidden_effect = {
+			set_politics = {
+				ruling_party = authoritarianism
+				elections_allowed = yes
+				election_frequency = 60
+			}
+			complete_national_focus = ukraine_2025_focus_12
+		}
+		promote_leader = UKR_valerii_zaluzhnyi
+	}
+	option = { # 
+		name = "A New Era: Biletsky"
+		trigger = {
+			fascism > 0.5
+		}
+		clr_country_flag = postmartiallaw
+		hidden_effect = {
+			set_politics = {
+				ruling_party = fascism
+				elections_allowed = yes
+				election_frequency = 60
+			}
+			complete_national_focus = ukraine_2025_focus_14
+		}
+		promote_leader = UKR_andriy_biletsky
+	}
+	option = { # 
+		name = "A New Era: Arestovych"
+		trigger = {
+			fascism > 0.5
+		}
+		clr_country_flag = postmartiallaw
+		hidden_effect = {
+			set_politics = {
+				ruling_party = fascism
+				elections_allowed = yes
+				election_frequency = 60
+			}
+			complete_national_focus = ukraine_2025_focus_15
+		}
+		promote_leader = UKR_oleksii_arestovych
+	}
+	option = { # 
+		name = "Runoff!"
+		trigger = {
+			NOT = {
+				OR = {
+					authoritarianism > 0.5
+					democratic > 0.5
+					fascism > 0.5
+				}
+			}
+		}
+		clr_country_flag = postmartiallaw
+	}
+	option = { # 
+		name = "It should be Symonenko."
+		trigger = {
+			communism > 0.5
+		}
+		clr_country_flag = postmartiallaw
+		start_civil_war = {
+			ruling_party = communism
+			ideology = ROOT
+			size = 0.6
+		}
+	}
+}
+
+country_event = {
+	id = UKR2025.2
+	title = "Peace Talks in Ukraine"
+	desc = UKR2025.2.d
+	picture = GFX_idi_amin_india
+	is_triggered_only = yes
+	trigger = {
+		has_country_flag = postmartiallaw
+		original_tag = UKR
+	}
+	fire_only_once = yes
+	option = { # 
+		name = "If We Must"
+		trigger = {
+			surrender_progress > 0.6
+		}
+		every_state = {
+			limit = {
+				OR = {
+					region = 130
+					region = 266
+				}
+				is_owned_by = UKR
+			}
+			transfer_state_to = RUS
+		}
+		promote_character = UKR_viktor_medvedchuk
+		set_politics = {
+			ruling_party = authoritarianism
+			elections_allowed = no
+		} 
+		RUS = {
+			set_autonomy = {
+				target = UKR
+				autonomous_state = autonomy_puppet
+				end_wars = no
+				end_civil_wars = no
+			}
+		}
+		mark_focus_tree_layout_dirty = yes
+	}
+	option = { # 
+		name = "Acceptable"
+		trigger = {
+			surrender_progress > 0.4
+			surrender_progress < 0.6
+		}
+		every_state = {
+			limit = {
+				OR = {
+					region = 130
+					region = 266
+				}
+				is_owned_by = UKR
+			}
+			transfer_state_to = RUS
+		}
+	}
+	option = { # 
+		name = "Acceptable"
+		trigger = {
+			surrender_progress < 0.4
+		}
+		every_state = {
+			OR = {
+				region = 130
+			}
+		}
+	}
+	option = { # 
+		name = "Never!"
+		add_war_support = 0.1
+	}
+}

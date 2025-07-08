@@ -1,0 +1,22 @@
+###########################
+# Europe Province Rework Events
+###########################
+
+add_namespace = per_1789_event
+
+# French Revolution
+country_event = {
+	id = per_1789_event.1
+	title = "The United Kingdom of Portugal, Brazil and the Algarves"
+	desc = per_1789_event.1.d
+	picture = GFX_idi_amin_india
+	is_triggered_only = yes
+fire_only_once = yes
+	option = { # 
+		name = "The Algarves are important too"
+		ai_chance = { factor = 100 } 
+	POR={set_cosmetic_tag=POR_BRA_ALG}
+	POR={add_war_support=0.05}
+	POR={add_stability=0.05}
+	}
+}

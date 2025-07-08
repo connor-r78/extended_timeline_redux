@@ -1,0 +1,14 @@
+characters={
+	NAF_robert_williams = {
+		name = "Robert F. Williams"
+		portraits = {
+			civilian = {
+				large="GFX_portrait_NAF_robert_williams"
+			}
+		}
+		country_leader={
+			ideology = leninism
+		}
+	}
+}
+

@@ -1,0 +1,293 @@
+add_namespace = USA2000
+
+country_event = { # 2024 Elections
+	id = USA2000.1
+	title = "The [?global.year] Elections of the United States of America"
+	desc = USA2000.1.d
+	picture = GFX_idi_amin_india
+	is_triggered_only = yes
+	trigger = {
+		original_tag = USA
+		date > 2021.1.1
+		date < 2025.1.1
+	}
+	fire_only_once = yes
+
+	immediate = {
+		USA = {
+			set_variable = { inna_date = global.year }
+			add_to_variable = { inna_date = 1 }
+			multiply_variable = { inna_date = 0.001 }
+			multiply_variable = { inna_date = 365 }
+			multiply_variable = { inna_date = 24 }
+			add_to_variable = { inna_date = 43800.011 }
+			add_to_variable = { inna_date = 0.48 }
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_completed_focus = USA_lame_duck_amendment
+				}
+			}
+			add_to_variable = { inna_date = 1.032 }
+		}
+		add_ideas = USA_lame_duck_period
+	}
+
+	option = {
+		name = "Make America Great Again Again!"
+		trigger = {
+			has_country_flag = trump24
+		}
+		set_country_flag = trump_elected
+    }
+}
+
+country_event = {
+	id = USA2000.2
+	title = "Donald Trump Announces Campaign for President"
+	desc = USA2000.2.d
+	picture = GFX_idi_amin_india
+	trigger = {
+		original_tag = USA
+		has_elections = yes
+		has_country_flag = j6failed
+		date > 2022.11.15
+		NOT = {
+			has_country_flag = trump24
+		}
+	}
+	fire_only_once = yes
+
+	option = {
+		name = "Worrisome..."
+		set_country_flag = trump24
+    }
+}
+
+country_event = {
+	id = USA2000.3
+	title = "[GetMonth] 6th Insurrection"
+	desc = USA2000.3.d
+	picture = GFX_idi_amin_india
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = "Stop the Steal!"
+		trigger = {
+			congress_high_support_trigger = yes
+		}
+		clr_country_flag = biden_elected
+		set_country_flag = trump_elected
+		custom_effect_tooltip = "The results of the last presidential election will be overturned and §YDonald Trump§! will remain the President."
+    }
+	option = {
+		name = "We must uphold the Constitution."
+		set_country_flag = j6failed
+    }
+}
+
+country_event = { # 2020 Elections
+	id = USA2000.4
+	title = "The [?global.year] Elections of the United States of America"
+	desc = USA2000.1.d
+	picture = GFX_idi_amin_india
+	is_triggered_only = yes
+	trigger = {
+		original_tag = USA		
+		date > 2017.1.1
+		date < 2021.1.1
+	}
+	fire_only_once = yes
+
+	immediate = {
+		USA = {
+			set_variable = { inna_date = global.year }
+			add_to_variable = { inna_date = 1 }
+			multiply_variable = { inna_date = 0.001 }
+			multiply_variable = { inna_date = 365 }
+			multiply_variable = { inna_date = 24 }
+			add_to_variable = { inna_date = 43800.011 }
+			add_to_variable = { inna_date = 0.48 }
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_completed_focus = USA_lame_duck_amendment
+				}
+			}
+			add_to_variable = { inna_date = 1.032 }
+		}
+		add_ideas = USA_lame_duck_period
+	}
+
+	option = {
+		name = "Build Back Better"
+		trigger = {
+			has_country_flag = biden20
+		}
+		set_country_flag = biden_elected
+		if = {
+			limit = {
+				has_country_leader = {
+					character = USA_donald_trump
+					ruling_only = yes
+				}
+			}
+			hidden_effect = {
+				country_event = {
+					id = USA2020.3 # January 6th Insurrection
+					days = 98
+				}
+			}
+		}
+    }
+}
+
+country_event = {
+	id = USA2000.5
+	title = "Joe Biden Announces Campaign for President"
+	desc = USA2000.5.d
+	picture = GFX_idi_amin_india
+	trigger = {
+		original_tag = USA
+		has_elections = yes
+		date > 2019.4.25
+		NOT = {
+			has_country_flag = biden20
+		}
+		USA_joe_biden = {
+			has_trait = us_vice_president_former
+		}
+	}
+	fire_only_once = yes
+
+	option = {
+		name = "Interesting"
+		set_country_flag = biden20
+    }
+}
+
+country_event = {
+	id = USA2000.6
+	title = "Joe Biden Announced as Vice Presidential Nominee"
+	desc = USA2000.6.d
+	picture = GFX_idi_amin_india
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = "Interesting"
+		set_country_flag = bidenvp08
+    }
+}
+
+country_event = { # DNC Vice President Selection
+	id = USA2000.7
+	hidden = yes
+	is_triggered_only = yes
+
+	option = { # Joe Biden
+		country_event = USA2000.6
+    }
+}
+
+country_event = {
+	id = USA2000.8
+	title = "DNC Selects Barack Obama as Democratic Nominee"
+	desc = USA2000.8.d
+	picture = GFX_idi_amin_india
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = "Interesting"
+		country_event = USA2000.7
+    }
+}
+
+country_event = { # DNC President Selection
+	id = USA2000.9
+	hidden = yes
+	trigger = {
+		date > 2008.8.27
+	}
+
+	option = { # Barack Obama
+		trigger = {
+			has_country_flag = obama08
+		}
+		country_event = USA2000.8
+    }
+}
+
+country_event = {
+	id = USA2000.10
+	title = "Barack Obama Announces Campaign for President"
+	desc = USA2000.10.d
+	picture = GFX_idi_amin_india
+	trigger = {
+		original_tag = USA
+		has_elections = yes
+		date > 2007.2.10
+		NOT = {
+			has_country_flag = obama08
+		}
+	}
+	fire_only_once = yes
+
+	option = {
+		name = "Interesting"
+		set_country_flag = obama08
+    }
+}
+
+country_event = { # 2008 Elections
+	id = USA2000.11
+	title = "The [?global.year] Elections of the United States of America"
+	desc = USA2000.11.d
+	picture = GFX_idi_amin_india
+	is_triggered_only = yes
+	trigger = {
+		original_tag = USA		
+		date > 2005.1.1
+		date < 2009.1.1
+	}
+	fire_only_once = yes
+
+	immediate = {
+		USA = {
+			set_variable = { inna_date = global.year }
+			add_to_variable = { inna_date = 1 }
+			multiply_variable = { inna_date = 0.001 }
+			multiply_variable = { inna_date = 365 }
+			multiply_variable = { inna_date = 24 }
+			add_to_variable = { inna_date = 43800.011 }
+			add_to_variable = { inna_date = 0.48 }
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_completed_focus = USA_lame_duck_amendment
+				}
+			}
+			add_to_variable = { inna_date = 1.032 }
+		}
+		add_ideas = USA_lame_duck_period
+	}
+
+	option = {
+		name = "Yes, We Can!"
+		trigger = {
+			has_country_flag = obama08
+		}
+		set_country_flag = obama_elected
+		if = {
+			limit = {
+				has_country_flag = bidenvp08
+			}
+			set_country_flag = bidenvp_elected
+		}
+    }
+}

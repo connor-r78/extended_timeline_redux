@@ -1,0 +1,483 @@
+###########################
+# Europe Province Rework Events
+###########################
+
+add_namespace = ger_1789_event
+
+# French Revolution
+country_event = {
+	id = ger_1789_event.1
+	title = "The Mediatisation of Wismar"
+	desc = ger_1789_event.1.d
+	picture = GFX_idi_amin_india
+	#is_triggered_only = yes
+trigger = {	
+date > 1803.1.1 has_start_date < 1804.1.1 
+original_tag = MEK		
+}
+fire_only_once = yes
+	option = { # 
+		name = "It's ours now"
+		ai_chance = { factor = 100 } 
+		every_state={
+        limit={
+        or={
+        state=1185
+        }
+        }
+        add_core_of=MEK
+		transfer_state_to=MEK
+        remove_core_of=SWE
+        } 
+	}
+}
+country_event = {
+	id = ger_1789_event.2
+	title = "The Mediatisation of the Palatinate"
+	desc = ger_1789_event.2.d
+	picture = GFX_idi_amin_india
+	#is_triggered_only = yes
+trigger = {	
+date > 1803.4.27 has_start_date < 1804.1.1 
+original_tag = BAD			
+}
+fire_only_once = yes
+	option = { # 
+		name = "It's ours now"
+		ai_chance = { factor = 100 } 
+		BAD={annex_country = { target = PFZ transfer_troops = yes }}
+		every_state={
+        limit={
+        or={
+        state=1162
+        }
+        }
+        add_core_of=BAD
+		transfer_state_to=BAD
+        remove_core_of=PFZ
+        }
+	}
+}
+country_event = {
+	id = ger_1789_event.3
+	title = "The Mediatisation of Fürstenberg"
+	desc = ger_1789_event.3.d
+	picture = GFX_idi_amin_india
+	#is_triggered_only = yes
+trigger = {	
+date > 1806.7.1 has_start_date < 1807.1.1 
+original_tag = BAD		
+}
+fire_only_once = yes
+	option = { # 
+		name = "It's ours now"
+		ai_chance = { factor = 100 } 
+		BAD={annex_country = { target = FUR transfer_troops = yes }}
+		every_state={
+        limit={
+        or={
+        state=1088
+        }
+        }
+        add_core_of=BAD
+		transfer_state_to=BAD
+        remove_core_of=FUR
+        }
+	}
+}
+country_event = {
+	id = ger_1789_event.4
+	title = "The Mediatisation of Constance"
+	desc = ger_1789_event.4.d
+	picture = GFX_idi_amin_india
+	#is_triggered_only = yes
+trigger = {	
+date > 1802.9.16 has_start_date < 1803.1.1 
+original_tag = BAD		
+}
+fire_only_once = yes
+	option = { # 
+		name = "It's ours now"
+		ai_chance = { factor = 100 } 
+		BAD={annex_country = { target = KON transfer_troops = yes }}
+		every_state={
+        limit={
+        or={
+        state=1232
+        }
+        }
+        add_core_of=BAD
+		transfer_state_to=BAD
+        remove_core_of=KON
+        }
+	}
+}
+country_event = {
+	id = ger_1789_event.5
+	title = "The Mediatisation of Buchau"
+	desc = ger_1789_event.5.d
+	picture = GFX_idi_amin_india
+	#is_triggered_only = yes
+trigger = {	
+date > 1803.1.1 has_start_date < 1804.1.1 
+original_tag = WUR			
+}
+fire_only_once = yes
+	option = { # 
+		name = "It's ours now"
+		ai_chance = { factor = 100 } 
+		WUR={annex_country = { target = BUC transfer_troops = yes }}
+		every_state={
+        limit={
+        or={
+        state=1089
+        }
+        }
+        add_core_of=WUR
+		transfer_state_to=WUR
+        remove_core_of=BUC
+        }
+	}
+}
+country_event = {
+	id = ger_1789_event.6
+	title = "The Mediatisation of Ulm"
+	desc = ger_1789_event.6.d
+	picture = GFX_idi_amin_india
+	#is_triggered_only = yes
+trigger = {	
+date > 1803.1.1 has_start_date < 1804.1.1 
+original_tag = BAY		
+}
+fire_only_once = yes
+	option = { # 
+		name = "It's ours now"
+		ai_chance = { factor = 100 } 
+		BAY={annex_country = { target = ULM transfer_troops = yes }}
+		every_state={
+        limit={
+        or={
+        state=841
+        }
+        }
+        add_core_of=BAY
+		transfer_state_to=BAY
+        remove_core_of=ULM
+        }
+	}
+}
+country_event = {
+	id = ger_1789_event.7
+	title = "The Mediatisation of Jever"
+	desc = ger_1789_event.7.d
+	picture = GFX_idi_amin_india
+	#is_triggered_only = yes
+trigger = {	
+date > 1818.1.1 has_start_date < 1819.1.1 
+original_tag = OLD			
+}
+fire_only_once = yes
+	option = { # 
+		name = "It's ours now"
+		ai_chance = { factor = 100 } 
+	}
+}
+country_event = {
+	id = ger_1789_event.8
+	title = "The Mediatisation of Ulm"
+	desc = ger_1789_event.8.d
+	picture = GFX_idi_amin_india
+	#is_triggered_only = yes
+trigger = {	
+date > 1809.1.1 has_start_date < 1810.1.1 
+original_tag = WUR		
+}
+fire_only_once = yes
+	option = { # 
+		name = "It's ours now"
+		ai_chance = { factor = 100 } 
+		every_state={
+        limit={
+        or={
+        state=841
+        }
+        }
+        add_core_of=WUR
+		transfer_state_to=WUR
+        remove_core_of=BAY
+        }
+	}
+}
+country_event = {
+	id = ger_1789_event.9
+	title = "The Electorate of Baden"
+	desc = ger_1789_event.9.d
+	picture = GFX_idi_amin_india
+	#is_triggered_only = yes
+trigger = {	
+date > 1803.1.1 has_start_date < 1804.1.1 
+original_tag = BAD		
+}
+fire_only_once = yes
+	option = { # 
+		name = "We are now greater than before"
+		ai_chance = { factor = 100 } 
+	BAD={set_cosmetic_tag = BAD_electorate}
+	BAD={add_war_support=0.05}
+	BAD={add_stability=0.05}
+	}
+}
+country_event = {
+	id = ger_1789_event.10
+	title = "The Grand Duchy of Baden"
+	desc = ger_1789_event.10.d
+	picture = GFX_idi_amin_india
+	#is_triggered_only = yes
+trigger = {	
+date > 1806.10.24 has_start_date < 1807.1.1 
+original_tag = BAD			
+}
+fire_only_once = yes
+	option = { # 
+		name = "We should strive to become a middle power in Germany"
+		ai_chance = { factor = 100 } 
+	BAD={set_cosmetic_tag = BAD_grandduchy}
+	BAD={add_war_support=0.05}
+	BAD={add_stability=0.05}
+	}
+}
+country_event = {
+	id = ger_1789_event.11
+	title = "The Grand Duchy of Oldenburg"
+	desc = ger_1789_event.11.d
+	picture = GFX_idi_amin_india
+	#is_triggered_only = yes
+trigger = {	
+date > 1814.9.1 has_start_date < 1815.1.1 
+original_tag = OLD	
+}
+fire_only_once = yes
+	option = { # 
+		name = "We should strive to become a middle power in Germany"
+		ai_chance = { factor = 100 } 
+	OLD={set_cosmetic_tag = OLD_grandduchy}
+	OLD={add_war_support=0.05}
+	OLD={add_stability=0.05}
+	}
+}
+country_event = {
+	id = ger_1789_event.12
+	title = "The Mediatisation of Further Austria"
+	desc = ger_1789_event.12.d
+	picture = GFX_idi_amin_india
+	#is_triggered_only = yes
+trigger = {	
+date > 1806.1.1 has_start_date < 1812.1.1 
+original_tag = BAD
+}
+fire_only_once = yes
+	option = { # 
+		name = "It's ours now"
+		ai_chance = { factor = 100 } 
+		every_state={
+        limit={
+        or={
+        state=1250
+        }
+        }
+        add_core_of=BAD
+		transfer_state_to=BAD
+        remove_core_of=AUS
+        }
+	}
+}
+country_event = {
+	id = ger_1789_event.13
+	title = "The Electorate of Salzburg"
+	desc = ger_1789_event.13.d
+	picture = GFX_idi_amin_india
+	#is_triggered_only = yes
+trigger = {	
+date > 1803.4.27 has_start_date < 1804.1.1 
+original_tag = AUS	
+}
+fire_only_once = yes
+	option = { # 
+		name = "We are now greater than before"
+		ai_chance = { factor = 100 } 
+	SAL={set_cosmetic_tag = SAL_electorate}
+	SAL={add_war_support=0.05}
+	SAL={add_stability=0.05}
+	SAL={promote_character=SAL_ferdinandiii}
+	SAL={set_party_name = { ideology = neutrality long_name = SAL_LOR_neutrality_party_long name = SAL_LOR_neutrality_party }}
+	}
+}
+country_event = {
+	id = ger_1789_event.14
+	title = "The Electorate of Salzburg"
+	desc = ger_1789_event.14.d
+	picture = GFX_idi_amin_india
+	#is_triggered_only = yes
+trigger = {	
+date > 1806.1.1 has_start_date < 1807.1.1 
+original_tag = AUS	
+}
+fire_only_once = yes
+	option = { # 
+		name = "We are now greater than before"
+		ai_chance = { factor = 100 } 
+	WRZ={set_cosmetic_tag = WRZ_grandduchy}
+	WRZ={add_war_support=0.05}
+	WRZ={add_stability=0.05}
+	WRZ={promote_character=WRZ_ferdinandiii}
+	WRZ={set_party_name = { ideology = neutrality long_name = WRZ_LOR_neutrality_party_long name = WRZ_LOR_neutrality_party }}
+	}
+}
+country_event = {
+	id = ger_1789_event.15
+	title = "The Grand Duchy of Hesse"
+	desc = ger_1789_event.15.d
+	picture = GFX_idi_amin_india
+	#is_triggered_only = yes
+trigger = {	
+date > 1806.8.13 has_start_date < 1807.1.1 
+original_tag = HES	
+}
+fire_only_once = yes
+	option = { # 
+		name = "We are now greater than before"
+		ai_chance = { factor = 100 } 
+	HES={set_cosmetic_tag = HES_grandduchy}
+	HES={add_war_support=0.05}
+	HES={add_stability=0.05}
+	}
+}
+country_event = {
+	id = ger_1789_event.16
+	title = "The Grand Duchy of Hesse and by Rhine"
+	desc = ger_1789_event.16.d
+	picture = GFX_idi_amin_india
+	#is_triggered_only = yes
+trigger = {	
+HES={owns_state=1182}
+original_tag = HES	
+date > 1789.1.1 has_start_date < 1821.1.1 
+}
+fire_only_once = yes
+	option = { # 
+		name = "We are on the same level as Hesse-Kassel"
+		ai_chance = { factor = 100 } 
+	HES={set_cosmetic_tag = HES_grandduchy_rhine}
+	HES={add_war_support=0.05}
+	HES={add_stability=0.05}
+	}
+}
+country_event = {
+	id = ger_1789_event.17
+	title = "The Extinction of the House of Este"
+	desc = ger_1789_event.17.d
+	picture = GFX_idi_amin_india
+	#is_triggered_only = yes
+trigger = {	
+date > 1803.10.14 has_start_date < 1804.1.1 
+original_tag = AUS
+}
+fire_only_once = yes
+	option = { # 
+		name = "Are Modena and Massa really ours now?"
+		ai_chance = { factor = 100 } 
+news_event = ger_1789_news.17
+MOD={add_war_support=-0.5
+add_political_power=-150
+promote_character=MOD_francisiv
+retire_character=MOD_ercole
+}
+MAS={add_war_support=-0.5
+add_political_power=-150
+promote_character=MAS_francisiv
+retire_character=MAS_ercole
+}
+MOD={set_party_name = { ideology = neutrality long_name = MOD_LOR_neutrality_party_long name = MOD_LOR_neutrality_party }}
+MAS={set_party_name = { ideology = neutrality long_name = MAS_LOR_neutrality_party_long name = MAS_LOR_neutrality_party }}	
+}
+}
+country_event = {
+	id = ger_1789_event.18
+	title = "The Mediatisation of Berchtesgaden"
+	desc = ger_1789_event.18.d
+	picture = GFX_idi_amin_india
+	#is_triggered_only = yes
+trigger = {	
+date > 1803.4.27 has_start_date < 1804.1.1 
+original_tag = AUS	
+}
+fire_only_once = yes
+	option = { # 
+		name = "It now belongs to the Elector of Salzburg"
+		ai_chance = { factor = 100 } 
+		SAL={annex_country = { target = BTG transfer_troops = yes }}
+		every_state={
+        limit={
+        or={
+        state=1288
+        }
+        }
+        add_core_of=SAL
+		transfer_state_to=SAL
+        remove_core_of=BTG
+        }
+	}
+}
+country_event = {
+	id = ger_1789_event.19
+	title = "Austria leaves the Continental System"
+	desc = ger_1789_event.19.d
+	picture = GFX_idi_amin_india
+	#is_triggered_only = yes
+trigger = {	
+date > 1813.3.1 date < 1813.6.1 
+original_tag = AUS	
+AUS={is_in_faction_with = FRA}
+}
+fire_only_once = yes
+	option = { # 
+		name = "we need peace of mind"
+		ai_chance = { factor = 100 } 
+AUS={set_country_flag=austrialeavingcontinentalsystem}
+		AUS={add_stability=0.05}
+AUS={leave_faction=yes}
+every_country = {
+  limit = {
+  has_war_with = AUS
+  }
+  white_peace = AUS
+}
+	}
+}
+country_event = {
+	id = ger_1789_event.20
+	title = "Austria joins the Coalition"
+	desc = ger_1789_event.20.d
+	picture = GFX_idi_amin_india
+	#is_triggered_only = yes
+trigger = {	
+date > 1813.8.12 has_start_date < 1814.1.1 
+original_tag = AUS	
+AUS={has_country_flag=austrialeavingcontinentalsystem}
+}
+fire_only_once = yes
+	option = { # 
+		name = "we need to return to order"
+		ai_chance = { factor = 100 } 
+	AUS={
+	add_stability=-0.05
+	}
+	ENG={add_to_faction = AUS}
+		AUS = {
+	declare_war_on = {
+		target = FRA
+		type = annex_everything
+	}
+	}
+	}
+}

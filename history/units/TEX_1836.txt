@@ -1,0 +1,29 @@
+division_template = {
+	name = "Texian Militia"
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+	}
+	priority = 2
+}
+units = {
+	division = {
+		name = "Texian Army"
+		location = 1927
+		division_template = "Texian Militia"
+		start_experience_factor = 0.4
+	}
+}
+
+### Starting Equipment ###
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = infantry_equipment_0
+			creator = "TEX"
+		}
+		requested_factories = 1
+		progress = 0.28
+		efficiency = 100
+	}
+}

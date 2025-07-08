@@ -1,0 +1,14 @@
+marstrand_free_port = {
+	icon = GFX_idea_marstrand_flag
+	
+recruitable_population_factor = -0.33
+local_factories = -1
+disable_strategic_redeployment = yes
+}
+khiva_slavetrade_russia = {
+	icon = GFX_idea_khiva_slavetrade
+	
+recruitable_population_factor = -0.1
+local_factories = -0.1
+disable_strategic_redeployment = yes
+}

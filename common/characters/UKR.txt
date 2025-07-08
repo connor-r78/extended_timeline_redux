@@ -1,0 +1,284 @@
+characters = {
+
+	UKR_viktor_yushchenko = {
+		name = "Viktor Yuschchenko"
+		portraits = {
+			civilian = {
+				large = GFX_portrait_UKR_viktor_yushchenko
+			}
+		}
+		country_leader = {
+			ideology = liberalism
+		}
+	}
+
+	UKR_oleksandr_turchynov = {
+		name = "Oleksandr Turchynov"
+		portraits = {
+			civilian = {
+				large = GFX_portrait_UKR_oleksandr_turchynov
+			}
+		}
+		country_leader = {
+			ideology = liberalism
+		}
+	}
+
+	UKR_denys_shmyhal = {
+		name = "Denys Shmyhal"
+		portraits = {
+			civilian = {
+				large = GFX_portrait_UKR_denys_shmyhal
+			}
+		}
+		country_leader = {
+			ideology = liberalism
+		}
+	}
+	
+	UKR_viktor_yanukovych = {
+		name = "Victor Yanukovych"
+		portraits = {
+			civilian = {
+				large = GFX_portrait_UKR_viktor_yanukovych
+			}
+		}
+		country_leader = {
+			ideology = oligarchism
+		}
+	}
+
+	UKR_leonid_kuchma = {
+		name = "Leonid Kuchma"
+		portraits = {
+			civilian = {
+				large = GFX_portrait_UKR_leonid_kuchma
+			}
+		}
+		country_leader = {
+			ideology = oligarchism
+		}
+	}
+
+	UKR_viktor_medvedchuk = {
+		name = "Viktor Medvedchuk"
+		portraits = {
+			civilian = {
+				large = GFX_portrait_UKR_viktor_medvedchuk
+			}
+		}
+		country_leader = {
+			ideology = oligarchism
+		}
+	}
+
+	UKR_andriy_biletsky = {
+		name = "Andriy Biletsky"
+		portraits = {
+			civilian = {
+				large = GFX_portrait_UKR_andriy_biletsky
+			}
+		}
+		country_leader = {
+			ideology = fascism_ideology
+		}
+	}
+
+	UKR_revolutionary_action = {
+		name = "Revolutionary Action Collective"
+		portraits = {
+			civilian = {
+				large = GFX_portrait_SPR_anarchist_commune
+			}
+		}
+		country_leader = {
+			ideology = anarchism
+		}
+	}
+
+	UKR_borys_skoropadskyi = {
+		name = "Borys Skoropadskyi"
+		portraits = {
+			civilian = {
+				large = GFX_portrait_UKR_borys_skoropadskyi
+			}
+		}
+		country_leader = {
+			ideology = skoropadskyi
+		}
+	}
+
+	UKR_petro_symonenko = {
+		name = "Petro Symonenko"
+		portraits = {
+			civilian = {
+				large = GFX_portrait_UKR_petro_symonenko
+			}
+		}
+		country_leader = {
+			ideology = leninism
+		}
+	}
+
+	UKR_oleksii_arestovych = {
+		name = "Oleksii Arestovych"
+		portraits = {
+			civilian = {
+				large = GFX_portrait_UKR_oleksii_arestovych
+			}
+		}
+		country_leader = {
+			ideology = rexism
+		}
+	}
+
+	UKR_valerii_zaluzhnyi = {
+		name = "Valerii Zaluzhnyi"
+		portraits = {
+			civilian = {
+				large = GFX_portrait_UKR_valerii_zaluzhnyi
+				small = GFX_portrait_UKR_valerii_zaluzhnyi_small
+			}
+		}
+		country_leader = {
+			ideology = militarism
+		}
+		advisor = {
+			slot = army_chief
+			idea_token = UKR_valerii_zaluzhnyi
+		}
+	}
+
+	UKR_oleksandr_syrskyi = {
+		name = "Oleksandr Syrskyi"
+		portraits = {
+			civilian = {
+				large = GFX_portrait_UKR_oleksandr_syrskyi
+				small = GFX_portrait_UKR_oleksandr_syrskyi_small
+			}
+		}
+		country_leader = {
+			ideology = militarism
+		}
+		advisor = {
+			slot = army_chief
+			idea_token = UKR_oleksandr_syrskyi
+		}
+	}
+
+	UKR_volodymyr_zelenskyy = {
+		name = "Volodymyr Zelenskyy"
+		portraits = {
+			civilian = {
+				large = GFX_portrait_UKR_volodymyr_zelenskyy
+				small = GFX_portrait_UKR_volodymyr_zelenskyy_small
+			}
+		}
+		country_leader = {
+			ideology = liberalism
+		}
+		advisor = {
+			slot = head_of_state
+			idea_token = UKR_volodymyr_zelenskyy_president
+		}
+	}
+
+	UKR_kost_levytsky = {
+		name = UKR_kost_levytsky
+		portraits = {
+			civilian = {
+				large = GFX_portrait_Kost_Levytsky
+			}
+		}
+		country_leader = {
+			ideology = conservatism
+			expire = "1953.3.1"
+			id = -1
+			traits = { }
+		}
+	}
+
+	UKR_nikita_krushchyov = {
+		name = "Nikita Khrushchev"
+		portraits = {
+			civilian = {
+				large = GFX_portrait_Nikita_Sergeyevich_Khrushchyov
+			}
+		}
+		country_leader = {
+			ideology = marxism
+			expire = "1953.3.1"
+			id = -1
+			traits = { }
+		}
+	}
+
+	UKR_stepan_bandera = {
+		name = UKR_stepan_bandera
+		portraits = {
+			civilian = {
+				large = GFX_portrait_Stepan_Bandera
+			}
+		}
+		country_leader = {
+			ideology = fascism_ideology
+			expire = "1953.3.1"
+			id = -1
+			traits = { }
+		}
+	}
+
+	UKR_mykhailo_omelianovych_pavlenko = {
+
+		name = UKR_mykhailo_omelianovych_pavlenko
+
+		portraits = {
+			army = {
+				large = GFX_portrait_UKR_mykhailo_omelianovych_pavlenko
+				small = GFX_portrait_UKR_mykhailo_omelianovych_pavlenko_small
+			}
+		}
+
+		field_marshal = {
+			traits = { winter_specialist cavalry_leader }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 2
+			legacy_id = -1
+			visible = {
+				NOT = {
+					has_government = communism
+				}
+			}
+		}
+		
+	}
+
+	UKR_pavlo_shandruk = {
+
+		name = UKR_pavlo_shandruk
+
+		portraits = {
+			army = {
+				large = GFX_portrait_UKR_pavlo_shandruk
+				small = GFX_portrait_UKR_pavlo_shandruk_small
+			}
+		}
+
+		corps_commander = {
+			traits = { ranger infantry_officer }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 1
+			legacy_id = -1
+			visible = {
+			}
+		}
+		
+	}
+
+}
