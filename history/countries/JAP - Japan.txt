@@ -1,6 +1,11 @@
 ﻿capital = 282
 
-
+1895.11.8 = {
+	complete_national_focus = JAP_relinquish_liaodong
+}
+1904.2.8 = {
+	complete_national_focus = JAP_strike_port_arthur
+}
 
 set_stability = 0.2 #baseline, THE EMPEROR PROTECTS
 set_war_support = 0.8

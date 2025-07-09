@@ -21,6 +21,9 @@ ideologies = {
 
 			centrism = {
 			}
+
+			antiatlanticism = {
+			}
 		}
 
 		dynamic_faction_names = {

@@ -19144,7 +19144,6 @@ focus = {
 		search_filters = {FOCUS_FILTER_POLITICAL }
 
 		completion_reward = {
-			promote_character = RUS_georgy_lvov
 		}
 	}
 

@@ -15,8 +15,8 @@
 	continuous_focus_position = { x = 20 y = 1700 }
 
 	focus = {
-		id = JAP_strike_port_arthur
-		icon = GFX_goal_generic_major_war
+		id = JAP_relinquish_liaodong
+		icon = GFX_goal_anschluss
 
 		x = 14
 		y = 0
@@ -47,6 +47,48 @@
 
 		completion_reward = {
 			
+		}
+	}
+
+	focus = {
+		id = JAP_strike_port_arthur
+		icon = GFX_goal_generic_major_war
+
+		x = 0
+		y = 1
+
+		prerequisite = { focus = JAP_relinquish_liaodong }
+		relative_position_id = JAP_relinquish_liaodong
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		allow_branch = {
+			
+		}
+
+		available = {
+			RUS = {
+				controls_state = 745
+			}
+		}
+
+		bypass = {
+			controls_state = 745
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			declare_war_on = {
+				target = RUS
+				type = annex_everything
+			}
 		}
 	}
 

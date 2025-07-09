@@ -1,0 +1,105 @@
+add_namespace = KOR1859
+
+country_event = {
+	id = KOR1859.1
+	title = "[KOR.KOR_choe_je_u.GetName] Experiences Revelation"
+	desc = KOR1859.1.d
+	picture = GFX_idi_amin_india
+	trigger = {
+		original_tag = KOR
+		NOT = {
+			has_government = democratic
+			has_country_flag = donghak_introduced
+		}
+		date > 1860.5.25
+	}
+	fire_only_once = yes
+	option = {
+		name = "Worrisome..."
+		set_party_name = {
+			ideology = democratic
+			long_name = "Donghak"
+			name = "Donghak"
+		}
+		set_country_flag = donghak_introduced
+		KOR_choe_je_u = {
+			set_character_name = "Su-un"
+		}
+		hidden_effect = {
+			country_event = {
+				id = KOR1859.3
+				days = 1294
+			}
+		}
+	}
+}
+
+country_event = {
+	id = KOR1859.2
+	title = "Donghak Peasant Revolution"
+	desc = KOR1859.2.d
+	picture = GFX_idi_amin_india
+	trigger = {
+		original_tag = KOR
+		NOT = {
+			has_country_leader_ideology = antiatlanticism
+			has_country_flag = donghak_revolution_happened
+		}
+		has_country_flag = donghak_introduced
+		date > 1894.1.11
+	}
+	fire_only_once = yes
+	option = {
+		name = "The rebels will be crushed."
+		set_country_flag = donghak_revolution_happened
+	}
+}
+
+country_event = {
+	id = KOR1859.3
+	title = "[KOR.KOR_choe_je_u.GetName] is Arrested"
+	desc = KOR1859.3.d
+	picture = GFX_idi_amin_india
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = "Great!"
+		hidden_effect = {
+			country_event = {
+				id = KOR1859.4
+				days = 117
+			}
+		}
+	}
+}
+
+country_event = {
+	id = KOR1859.4
+	title = "[KOR.KOR_choe_je_u.GetName] is Brought to Trial"
+	desc = KOR1859.4.d
+	picture = GFX_idi_amin_india
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = "Guilty!"
+		hidden_effect = {
+			country_event = {
+				id = KOR1859.5
+				days = 10
+			}
+		}
+	}
+}
+
+country_event = {
+	id = KOR1859.5
+	title = "[KOR.KOR_choe_je_u.GetName] is Beheaded"
+	desc = KOR1859.5.d
+	picture = GFX_idi_amin_india
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = "Great!"
+		retire_character = KOR_choe_je_u
+	}
+}

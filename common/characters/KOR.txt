@@ -1,0 +1,14 @@
+characters = {
+	KOR_choe_je_u = {
+		name = "Choe Je-u"
+		portraits = {
+			civilian = {
+				large = "GFX_portrait_kon_karl_large"
+			}
+		}
+		country_leader = {
+			ideology = antiatlanticism
+		}
+	}
+}
+
