@@ -8,12 +8,18 @@
 			add = 10
 			tag = RUS
 		}
+
+		modifier = {
+			add = 10
+			tag = SOV
+			has_start_date > 1917.11.7
+		}
 	}
 
 	initial_show_position = {
 		x = 0
 	}
-continuous_focus_position = { x = 7000 y = 0000 }
+	continuous_focus_position = { x = 2000 y = 2000 }
 	default = no
 		focus = {
 		id = russianempirerework_althistory_1
@@ -284,19 +290,44 @@ mutually_exclusive = {focus = russianempirerework_1789_1815_first_100_focus_47  
 		SPR={country_event = russianempire_1789_1812.96} 
 		}
 	}
-				focus = {
+	focus = {
 		id = russianempirerework_althistory_9
 		icon = GFX_goal_utah_deseret_russia_flag
-		x = 13
-		y = 7
+		x = -1
+		y = 1
 		cost = 4.3
-mutually_exclusive = {  focus = russianempirerework_1789_1815_first_100_focus_88  }
+
+		relative_position_id = russianempirerework_1789_1815_first_100_focus_87
+
+		allow_branch = {
+			tag = RUS
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = obsolete_focus_branches_visibility
+						option = HIDE
+					}
+				}
+				NOT = { has_completed_focus = russianempirerework_1789_1815_first_100_focus_88 }
+			}
+		}
+
+		offset = {
+			x = 1
+			trigger = {
+				has_game_rule = {
+					rule = obsolete_focus_branches_visibility
+					option = HIDE
+				}
+				has_completed_focus = russianempirerework_althistory_9
+			}
+		}
+
+		mutually_exclusive = {  focus = russianempirerework_1789_1815_first_100_focus_88  }
 		ai_will_do = {
 			factor = 0
 		}
-		prerequisite = {
-		focus =	russianempirerework_1789_1815_first_100_focus_87
-		}
+		prerequisite = { focus =russianempirerework_1789_1815_first_100_focus_87 }
 		available = {
 		RUS={has_country_flag=RUS_lotf_ali_zand_exile}
 		}
@@ -409,21 +440,22 @@ mutually_exclusive = {  focus = russianempirerework_1789_1815_first_100_focus_88
 		completion_reward = {  
 		}
 	}
-		focus = {
+
+	focus = {
 		id = russianempirerework_1789_1815_first_100_focus_1
 		icon = GFX_focus_generic_treaty
 
-		x = -10
+		x = -11
 		y = -1
 
-		cost = 4.3
+		cost = 4.6
 
 		ai_will_do = {
 			factor = 1
 		}
 
-		available = {
-
+		allow_branch = {
+			tag = RUS
 		}
 
 		bypass = {
@@ -440,12 +472,16 @@ mutually_exclusive = {  focus = russianempirerework_1789_1815_first_100_focus_88
 		OTO={add_stability=-0.1 add_manpower = -20000}
 		}
 	}
-		focus = {
+
+	focus = {
 		id = russianempirerework_1789_1815_first_100_focus_2
 		icon = GFX_focus_generic_treaty
 
-		x = -11
-		y = 0
+		x = 0
+		y = 1
+
+		relative_position_id = russianempirerework_1789_1815_first_100_focus_1
+
 		prerequisite = {
 		focus =	russianempirerework_1789_1815_first_100_focus_1
 		}
@@ -1356,15 +1392,17 @@ mutually_exclusive = {  focus = russianempirerework_1789_1815_first_100_focus_88
 		completion_reward = {
 		RUS={country_event = russianempire_1789_1812.81}
 		RUS={country_event = russianempire_1789_1812.82}
-	}
 		}
-		focus = {
+	}
+
+	focus = {
 		id = russianempirerework_1789_1815_first_100_focus_23
 		icon = GFX_focus_generic_treaty
 
-		x = 9
+		x = 20
 		y = 1
 
+		relative_position_id = russianempirerework_1789_1815_first_100_focus_2
 
 		prerequisite = {
 		focus =	russianempirerework_1789_1815_first_100_focus_2
@@ -1874,8 +1912,10 @@ has_army_manpower = { size > 299999}
 		id = russianempirerework_1789_1815_first_100_focus_36
 		icon = GFX_goal_generic_neutrality_focus
 
-		x = 8
-		y = 2
+		x = -2
+		y = 1
+
+		relative_position_id = russianempirerework_1789_1815_first_100_focus_23
 
 		prerequisite = {
 		focus =	russianempirerework_1789_1815_first_100_focus_23
@@ -1903,16 +1943,18 @@ has_army_manpower = { size > 299999}
 		completion_reward = {
 		}
 	}
-		focus = {
+
+	focus = {
 		id = russianempirerework_1789_1815_first_100_focus_37
 		icon = GFX_focus_generic_treaty
 
-		x = 10
-		y = 2
+		x = 2
+		y = 1
 
-		prerequisite = {
-		focus =	russianempirerework_1789_1815_first_100_focus_23
-		}
+		relative_position_id = russianempirerework_1789_1815_first_100_focus_23
+
+		prerequisite = { focus = russianempirerework_1789_1815_first_100_focus_23 }
+
 		cost = 4.3
 
 		ai_will_do = {
@@ -1920,7 +1962,10 @@ has_army_manpower = { size > 299999}
 		}
 
 		available = {
-
+			NOT = {
+				country_exists = CRI
+				has_war_with = OTO
+			}
 		}
 
 		bypass = {
@@ -1941,8 +1986,10 @@ has_army_manpower = { size > 299999}
 		id = russianempirerework_1789_1815_first_100_focus_38
 		icon = GFX_focus_generic_treaty
 
-		x = 9
-		y = 3
+		x = 2
+		y = 1
+
+		relative_position_id = russianempirerework_1789_1815_first_100_focus_36
 
 		prerequisite = {
 		focus =	russianempirerework_1789_1815_first_100_focus_36
@@ -2088,13 +2135,13 @@ has_army_manpower = { size > 299999}
 		id = russianempirerework_1789_1815_first_100_focus_42
 		icon = GFX_focus_generic_treaty
 
-		x = 10
-		y = 4
+		x = 0
+		y = 1
+
+		relative_position_id = russianempirerework_1789_1815_first_100_focus_38
+
 		prerequisite = {
-		focus =	russianempirerework_1789_1815_first_100_focus_37
-		}
-				prerequisite = {
-		focus =	russianempirerework_1789_1815_first_100_focus_38
+			focus =	russianempirerework_1789_1815_first_100_focus_38
 		}
 
 		cost = 4.3
@@ -2662,12 +2709,16 @@ has_country_flag=treaty_secondpartion_flag
 		completion_reward = {
 		}
 	}
-		focus = {
+
+	focus = {
 		id = russianempirerework_1789_1815_first_100_focus_54
 		icon = GFX_focus_generic_treaty
 
-		x = 12
-		y = 4
+		x = 1
+		y = 1
+
+		relative_position_id = russianempirerework_1789_1815_first_100_focus_37
+
 		prerequisite = {
 		focus =	russianempirerework_1789_1815_first_100_focus_37
 		}
@@ -4469,15 +4520,16 @@ has_country_flag=treaty_thirdpartion_flag
 					}
 		}
 	}
-		focus = {
+
+	focus = {
 		id = russianempirerework_1789_1815_first_100_focus_86
 		icon = GFX_goal_generic_neutrality_focus
 
-		x = 13
-		y = 5
-		prerequisite = {
-		focus =	russianempirerework_1789_1815_first_100_focus_54
-		}
+		x = 1
+		y = 1
+		relative_position_id = russianempirerework_1789_1815_first_100_focus_54
+
+		prerequisite = { focus = russianempirerework_1789_1815_first_100_focus_54 }
 
 		cost = 4.3
 
@@ -4501,21 +4553,19 @@ has_country_flag=treaty_thirdpartion_flag
 		
 		
 		completion_reward = {
-						RUS={
-								set_autonomy = {
-				target = DAG
-                autonomous_state = autonomy_protectorate
-                freedom_level = 0.35
-	            }
-				}
+			
 		}
 	}
-		focus = {
+
+	focus = {
 		id = russianempirerework_1789_1815_first_100_focus_87
 		icon = GFX_goal_generic_neutrality_focus
 
-		x = 14
-		y = 6
+		x = 0
+		y = 1
+
+		relative_position_id = russianempirerework_1789_1815_first_100_focus_86
+
 		prerequisite = {
 		focus =	russianempirerework_1789_1815_first_100_focus_86
 		}
@@ -4544,17 +4594,45 @@ has_country_flag=treaty_thirdpartion_flag
 		completion_reward = {
 		}
 	}
-		focus = {
+
+	focus = {
 		id = russianempirerework_1789_1815_first_100_focus_88
 		icon = GFX_goal_generic_neutrality_focus
 
-		x = 15
-		y = 7
+		x = 1
+		y = 1
+		cost = 6.4
+
+		relative_position_id = russianempirerework_1789_1815_first_100_focus_87
+
+		allow_branch = {
+			tag = RUS
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = obsolete_focus_branches_visibility
+						option = HIDE
+					}
+				}
+				NOT = { has_completed_focus = russianempirerework_althistory_9 }
+			}
+		}
+
+		offset = {
+			x = -1
+			trigger = {
+				has_game_rule = {
+					rule = obsolete_focus_branches_visibility
+					option = HIDE
+				}
+				has_completed_focus = russianempirerework_1789_1815_first_100_focus_88
+			}
+		}
+
 		prerequisite = {
 		focus =	russianempirerework_1789_1815_first_100_focus_87
 		}
 mutually_exclusive = { focus =russianempirerework_althistory_9  }
-		cost = 4.3
 
 		ai_will_do = {
 			factor = 1
@@ -5337,12 +5415,14 @@ focus = {
 		id = russianempirerework_1793_1836_focus_7
 		icon = GFX_focus_generic_treaty
 
-		x = 11
-		y = 5
-		prerequisite = {
-		focus =	russianempirerework_1789_1815_first_100_focus_54
-		}
+		x = -1
+		y = 1
 		cost = 4.3
+
+		relative_position_id = russianempirerework_1789_1815_first_100_focus_54
+
+		prerequisite = { focus = russianempirerework_1789_1815_first_100_focus_54 }
+		
 
 		ai_will_do = {
 			factor = 1
@@ -5600,11 +5680,13 @@ focus = {
 		id = russianempirerework_1793_1836_focus_15
 		icon = GFX_goal_generic_neutrality_focus
         
-		x = 10
-		y = 6
-		prerequisite = {
-		focus =	russianempirerework_1793_1836_focus_7
-		}
+		x = 0
+		y = 1
+
+		relative_position_id = russianempirerework_1793_1836_focus_7
+
+		prerequisite = { focus =russianempirerework_1793_1836_focus_7 }
+
 		cost = 4.3
 
 		ai_will_do = {
@@ -6056,16 +6138,27 @@ has_country_leader = { character = RUS_pauli }
 		completion_reward = {
 		}
 	}
-		focus = {
+
+	focus = {
 		id = russianempirerework_1793_1836_focus_28
 		icon = GFX_goal_generic_neutrality_focus
-        		prerequisite = {
-		focus =	russianempirerework_1789_1815_first_100_focus_88 focus =russianempirerework_althistory_9
-		}
-		x = 14
-		y = 8
+        prerequisite = { focus = russianempirerework_1789_1815_first_100_focus_88 focus =russianempirerework_althistory_9 }
+		relative_position_id = russianempirerework_althistory_9
+		x = 1
+		y = 1
 
 		cost = 4.3
+
+		offset = {
+			x = -1
+			trigger = {
+				has_game_rule = {
+					rule = obsolete_focus_branches_visibility
+					option = HIDE
+				}
+				has_completed_focus = russianempirerework_althistory_9
+			}
+		}
 
 		ai_will_do = {
 			factor = 1
@@ -6117,14 +6210,14 @@ give_military_access = RUS
 		add_war_support=0.05
 		}
 	}
-		focus = {
+
+	focus = { # Regain control over Kartli-Kakheti
 		id = russianempirerework_1793_1836_focus_29
-		icon = GFX_goal_generic_neutrality_focus
-        		prerequisite = {
-		focus =	russianempirerework_1793_1836_focus_28
-		}
-		x = 14
-		y = 9
+		icon = GFX_focus_generic_treaty
+        prerequisite = { focus = russianempirerework_1793_1836_focus_28 }
+		relative_position_id = russianempirerework_1793_1836_focus_28
+		x = 0
+		y = 1
 
 		cost = 4.3
 
@@ -6139,26 +6232,60 @@ give_military_access = RUS
 		}
 
 		bypass = {
-
+			NOT = {
+				country_exists = GEO
+			}
 		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
-		search_filters = { FOCUS_FILTER_POLITICAL }
 		
 		completion_reward = {
-						RUS={
-								set_autonomy = {
-				target = GEO
-                autonomous_state = autonomy_protectorate
-                freedom_level = 0.35
+			RUS={
+				set_autonomy = {
+					target = GEO
+					autonomous_state = autonomy_protectorate
+					freedom_level = 0.35
 	            }
-				}
+			}
 		}
 	}
-		focus = {
+
+	focus = {
+		id = RUS_continue_eastern_expansion
+		icon = GFX_SOV_secure_the_baltics_ccp_2d_sov_compatibility
+        prerequisite = { focus = russianempirerework_1793_1836_focus_29 }
+		relative_position_id = russianempirerework_1793_1836_focus_29
+		x = 0
+		y = 1
+
+		cost = 4.3
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			is_major = yes
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			RUS={
+				set_autonomy = {
+					target = GEO
+					autonomous_state = autonomy_protectorate
+					freedom_level = 0.35
+	            }
+			}
+		}
+	}
+
+	focus = {
 		id = russianempirerework_1793_1836_focus_30
 		icon = GFX_goal_generic_neutrality_focus
         
@@ -12105,6 +12232,13 @@ focus = {
 		x = -30
 		y = 20
 		cost = 5
+
+		offset = {
+			y = -20
+			trigger = {
+				tag = SOV
+			}
+		}
 
 		ai_will_do = {
 			factor = 1
@@ -18978,13 +19112,9 @@ focus = {
 	focus = {
 		id = RUS_humiliation_in_japan
 		icon = GFX_SOV_an_adaptable_army_ccp_2d_sov_compatibility
-		x = 25
+		x = 30
 		y = 0
 		relative_position_id = SOV_strengthen_the_mobilization_plan
-
-		allow_branch = {
-			has_country_flag = lost_russo_japanese_war
-		}
 
 		offset = {
 			x = -8
@@ -18994,11 +19124,18 @@ focus = {
 					rule = obsolete_focus_branches_visibility
 					option = HIDE
 				}
-				has_completed_focus = SOV_beaten_but_not_defeated
+				has_completed_focus = SOV_the_path_of_marxism_leninism
+			}
+		}
+
+		allow_branch = {
+			OR = {
+				has_country_flag = lost_russo_japanese_war
+				has_completed_focus = RUS_humiliation_in_japan
 			}
 		}
 		
-		cost = 5
+		cost = 0
 
 		available = {
 
@@ -19018,18 +19155,6 @@ focus = {
 		y = 1
 		relative_position_id = RUS_humiliation_in_japan
 		prerequisite = { focus = RUS_humiliation_in_japan }
-
-		offset = {
-			x = -8
-			y = 0
-			trigger = {
-				has_game_rule = {
-					rule = obsolete_focus_branches_visibility
-					option = HIDE
-				}
-				has_completed_focus = SOV_beaten_but_not_defeated
-			}
-		}
 		
 		cost = 5
 
@@ -19051,21 +19176,24 @@ focus = {
 		y = 1
 		relative_position_id = RUS_provisional_government
 		prerequisite = { focus = RUS_provisional_government }
-		offset = {
-			x = -8
-			y = 0
-			trigger = {
-				has_game_rule = {
-					rule = obsolete_focus_branches_visibility
-					option = HIDE
-				}
-				has_completed_focus = SOV_beaten_but_not_defeated
-			}
-		}
+
 		cost = 5
 
-		available = {
+		offset = {
+			y = -2
+			trigger = {
+				tag = SOV
+			}
+		}
 
+		allow_branch = {
+			OR = {
+				tag = SOV
+				OR = {
+					has_country_flag = lost_russo_japanese_war
+					has_completed_focus = RUS_humiliation_in_japan
+				}
+			}
 		}
 		
 		search_filters = {FOCUS_FILTER_POLITICAL }
@@ -19087,7 +19215,17 @@ focus = {
 		y = 1
 		relative_position_id = RUS_bolshevik_coup
 		prerequisite = { focus = RUS_bolshevik_coup }
-
+		offset = {
+			x = -10
+			y = 0
+			trigger = {
+				has_game_rule = {
+					rule = obsolete_focus_branches_visibility
+					option = HIDE
+				}
+				has_completed_focus = SOV_the_path_of_marxism_leninism
+			}
+		}
 		offset = {
 			x = -8
 			y = 0
@@ -19097,6 +19235,13 @@ focus = {
 					option = HIDE
 				}
 				has_completed_focus = SOV_beaten_but_not_defeated
+			}
+			OR = {
+				tag = SOV
+				OR = {
+					has_country_flag = lost_russo_japanese_war
+					has_completed_focus = RUS_humiliation_in_japan
+				}
 			}
 		}
 		cost = 5
@@ -19112,6 +19257,12 @@ focus = {
 					}
 				}
 				NOT = { has_completed_focus = SOV_beaten_but_not_defeated }
+			}
+			if = {
+				limit = {
+					tag = RUS
+				}
+				has_country_flag = lost_russo_japanese_war
 			}
 		}
 
@@ -19172,16 +19323,20 @@ focus = {
 				NOT = {
 					AND = {
 						has_completed_focus = SOV_the_left_opposition
-						has_completed_focus = SOV_left_opposition_coup
 					}
 					AND = {
 						has_completed_focus = SOV_the_right_opposition
-						has_completed_focus = SOV_coup_detat
 					}
 					AND = {
 						has_completed_focus = SOV_beaten_but_not_defeated
 					}
 				}
+			}
+			if = {
+				limit = {
+					tag = RUS
+				}
+				has_country_flag = lost_russo_japanese_war
 			}
 		}
 
@@ -20573,13 +20728,9 @@ focus = {
 		x = 2
 		y = 1
 		offset = {
-			x = -7
-			y = 0
+			x = -3
 			trigger = {
-				OR = {
-					has_completed_focus = SOV_left_opposition_coup 
-					has_completed_focus = SOV_coup_detat
-				}
+				has_completed_focus = SOV_the_left_opposition
 				has_game_rule = {
 					rule = obsolete_focus_branches_visibility
 					option = HIDE
@@ -20588,6 +20739,18 @@ focus = {
 		}
 		relative_position_id = SOV_the_path_of_marxism_leninism
 		cost = 5
+
+		offset = {
+			x = -20
+			y = 0
+			trigger = {
+				has_game_rule = {
+					rule = obsolete_focus_branches_visibility
+					option = HIDE
+				}
+				has_completed_focus = SOV_the_right_opposition
+			}
+		}
 
 		available = {
 			SOV_soviet_civil_war_not_started = yes 
@@ -20604,8 +20767,15 @@ focus = {
 						option = HIDE
 					}
 				}
-				NOT = { has_completed_focus = SOV_the_centre } 
+				NOT = { has_completed_focus = SOV_the_centre }
+				NOT = { has_completed_focus = SOV_the_right_opposition }
 				NOT = { has_completed_focus = SOV_beaten_but_not_defeated }
+			}
+			if = {
+				limit = {
+					tag = RUS
+				}
+				has_country_flag = lost_russo_japanese_war
 			}
 		}
 		
@@ -21836,8 +22006,7 @@ focus = {
 		id = SOV_the_right_opposition
 		icon = GFX_focus_SOV_bukharinists
 		prerequisite = { focus = SOV_the_path_of_marxism_leninism }
-		allow_branch = { 
-			has_dlc = "No Step Back"
+		allow_branch = {
 			if = {
 				limit = {
 					has_game_rule = {
@@ -21845,14 +22014,26 @@ focus = {
 						option = HIDE
 					}
 				}
-				NOT = { has_completed_focus = SOV_the_centre }
-				NOT = { has_completed_focus = SOV_beaten_but_not_defeated }
+				NOT = { 
+					OR = {
+						has_completed_focus = SOV_the_centre
+						has_completed_focus = SOV_the_left_opposition
+						has_completed_focus = SOV_beaten_but_not_defeated 
+					}
+				}
+			}
+			if = {
+				limit = {
+					tag = RUS
+				}
+				has_country_flag = lost_russo_japanese_war
 			}
 		}
 		mutually_exclusive = { focus = SOV_the_left_opposition focus = SOV_the_centre}
 		x = 15
 		y = 0
 		relative_position_id = SOV_the_left_opposition
+
 		cost = 5
 		available = {
 			SOV_soviet_civil_war_not_started = yes 
@@ -22094,8 +22275,6 @@ focus = {
 			
 		}
 		allow_branch = {
-			has_dlc = "La Resistance"
-			has_dlc = "No Step Back"
 			if = {
 				limit = {
 					has_game_rule = {
@@ -22104,7 +22283,14 @@ focus = {
 					}
 				}
 				NOT = { has_completed_focus = SOV_the_centre } 
+				NOT = { has_completed_focus = SOV_the_left_opposition }
 				NOT = { has_completed_focus = SOV_beaten_but_not_defeated }
+			}
+			if = {
+				limit = {
+					tag = RUS
+				}
+				has_country_flag = lost_russo_japanese_war
 			}
 		}
 		bypass = {
@@ -23680,33 +23866,9 @@ focus = {
 		x = 24
 		y = 1
 		offset = {
-			x = -7
-			y = 0
-			trigger = { #Basic offset to compensate for missing Bukharinist branch
-				NOT = { has_dlc = "No Step Back" }
-			}
-		}
-		offset = {
-			x = -19
-			y = 0
-			trigger = { #Trotskyist branch hides
-				NOT = { has_dlc = "No Step Back" }
-				has_completed_focus = SOV_the_centre 
-				has_game_rule = {
-					rule = obsolete_focus_branches_visibility
-					option = HIDE
-				}
-			}
-		}
-		offset = {
-			x = -7
-			y = 0
-			trigger = { # Stalinist branch hides
-				NOT = { has_dlc = "No Step Back" }
-				AND = {
-					has_completed_focus = SOV_left_opposition_coup
-					has_completed_focus = SOV_the_left_opposition
-				}
+			x = -10
+			trigger = {
+				has_completed_focus = SOV_the_left_opposition
 				has_game_rule = {
 					rule = obsolete_focus_branches_visibility
 					option = HIDE
@@ -23717,29 +23879,7 @@ focus = {
 			x = -26
 			y = 0
 			trigger = {
-				has_dlc = "No Step Back"
 				has_completed_focus = SOV_the_centre
-				has_game_rule = {
-					rule = obsolete_focus_branches_visibility
-					option = HIDE
-				}
-			}
-		}
-		offset = {
-			x = -7
-			y = 0
-			trigger = {
-				has_dlc = "No Step Back"
-				OR = {
-					AND = {
-						has_completed_focus = SOV_the_left_opposition
-						has_completed_focus = SOV_left_opposition_coup
-					}
-					AND = {
-						has_completed_focus = SOV_the_right_opposition
-						has_completed_focus = SOV_coup_detat
-					}
-				}
 				has_game_rule = {
 					rule = obsolete_focus_branches_visibility
 					option = HIDE
@@ -23750,6 +23890,18 @@ focus = {
 		relative_position_id = SOV_the_path_of_marxism_leninism
 		cost = 5
 
+		offset = {
+			x = -19
+			y = 0
+			trigger = {
+				has_game_rule = {
+					rule = obsolete_focus_branches_visibility
+					option = HIDE
+				}
+				has_completed_focus = SOV_the_right_opposition
+			}
+		}
+
 		allow_branch = {
 			if = {
 				limit = {
@@ -23759,6 +23911,12 @@ focus = {
 					}
 				}
 				NOT = { has_completed_focus = SOV_beaten_but_not_defeated }
+			}
+			if = {
+				limit = {
+					tag = RUS
+				}
+				has_country_flag = lost_russo_japanese_war
 			}
 		}
 
@@ -24144,6 +24302,12 @@ focus = {
 					}
 				}
 				NOT = { has_completed_focus = SOV_beaten_but_not_defeated }
+			}
+			if = {
+				limit = {
+					tag = RUS
+				}
+				has_country_flag = lost_russo_japanese_war
 			}
 		}
 
@@ -27749,9 +27913,9 @@ ai_will_do = {
 		relative_position_id = SOV_the_path_of_marxism_leninism
 		prerequisite = { focus = RUS_bolshevik_coup }
 		offset = {
-			x = -44
+			x = 18
 			y = 0
-			trigger = { #All commie branches hide except for Stalinist
+			trigger = {
 				has_game_rule = {
 					rule = obsolete_focus_branches_visibility
 					option = HIDE
@@ -27771,7 +27935,6 @@ ai_will_do = {
 			}
 		}
 		allow_branch = { 
-			has_dlc = "No Step Back" 
 			if = {
 				limit = {
 					has_game_rule = {
@@ -27780,6 +27943,13 @@ ai_will_do = {
 					}
 				}
 				NOT = { has_completed_focus = SOV_the_path_of_marxism_leninism }
+			}
+			OR = {
+				tag = SOV
+				OR = {
+					has_country_flag = lost_russo_japanese_war
+					has_completed_focus = RUS_humiliation_in_japan
+				}
 			}
 		}
 		mutually_exclusive = { focus = SOV_the_path_of_marxism_leninism }

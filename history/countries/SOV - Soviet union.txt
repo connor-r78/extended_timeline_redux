@@ -1,4 +1,7 @@
-﻿
+﻿1917.11.7 = {
+	complete_national_focus = RUS_bolshevik_coup
+}
+
 ####
 #### NO STEP BACK
 ####
