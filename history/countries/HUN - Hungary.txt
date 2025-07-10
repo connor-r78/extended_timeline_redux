@@ -4,6 +4,17 @@ set_technology = {
 	early_submarine = 1
         gw_artillery = 1
 }
+
+1102.1.1 = {
+	set_autonomy = {
+		target = CRO
+		autonomous_state = autonomy_personal_union
+		end_wars = no
+		end_civil_wars = no
+	}
+}
+
+
 1789.1.1 = {
 		if = {
 		limit = { has_start_date < 1801.1.1 }

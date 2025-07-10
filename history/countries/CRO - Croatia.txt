@@ -1,9 +1,16 @@
 ﻿capital = 930
-1500.1.1 = {
-		set_capital = {
-  state = 109
-  remember_old_capital = no
+
+1785.1.1 = {
+	promote_character = CRO_ferenc_balassa
 }
+
+recruit_character = CRO_ferenc_balassa
+
+1500.1.1 = {
+	set_capital = {
+		state = 109
+		remember_old_capital = no
+	}
 }
 set_research_slots = 2
 1936.1.1 = {

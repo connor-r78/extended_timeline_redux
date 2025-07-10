@@ -359,6 +359,9 @@ ideologies = {
 
 		types = {
 
+			viceregalism = {
+			}
+
 			angevin = {
 			}
 
