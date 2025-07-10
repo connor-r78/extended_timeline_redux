@@ -1,0 +1,18 @@
+ideas = {
+
+	country = {
+	
+		convention_of_tientsin = {
+			
+			allowed = {
+				always = no
+			}
+			
+			modifier = {
+			}
+		}
+
+	
+	}
+
+}

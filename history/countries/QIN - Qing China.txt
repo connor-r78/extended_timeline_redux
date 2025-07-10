@@ -1,9 +1,15 @@
 ﻿capital = 608
-1736.1.1 = {
+
+1885.4.18 = {
+	add_ideas = convention_of_tientsin
+}
+
 recruit_character=QIN_qianlong
-promote_character=QIN_qianlong
 recruit_character=QIN_jiaqing
 recruit_character=QIN_daoguang
+
+1736.1.1 = {
+promote_character=QIN_qianlong
 }
 1800.1.1 = {
 promote_character=QIN_jiaqing

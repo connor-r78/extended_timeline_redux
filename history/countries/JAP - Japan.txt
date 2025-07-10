@@ -1,5 +1,9 @@
 ﻿capital = 282
 
+1885.4.18 = {
+	add_ideas = convention_of_tientsin
+}
+
 1895.11.8 = {
 	complete_national_focus = JAP_relinquish_liaodong
 }

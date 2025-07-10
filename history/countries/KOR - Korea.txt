@@ -12,12 +12,18 @@
 		set_character_name = "Su-un"
 	}
 }
+1863.4.25 = {
+	retire_character = KOR_choe_je_u
+	promote_character = KOR_choe_si_hyeong
+}
 
 1894.1.11 = {
 
 }
 
 recruit_character = KOR_choe_je_u
+recruit_character = KOR_choe_si_hyeong
+recruit_character = KOR_jeon_bong_jun
 
 1936.1.1 = {
 oob = "KOR_1936"

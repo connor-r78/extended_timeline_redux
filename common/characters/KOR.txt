@@ -3,7 +3,31 @@ characters = {
 		name = "Choe Je-u"
 		portraits = {
 			civilian = {
-				large = "GFX_portrait_kon_karl_large"
+				large = "GFX_portrait_KOR_choe_je_u"
+			}
+		}
+		country_leader = {
+			ideology = antiatlanticism
+		}
+	}
+
+	KOR_choe_si_hyeong = {
+		name = "Haw-wol"
+		portraits = {
+			civilian = {
+				large = "GFX_portrait_choe_si_hyeong"
+			}
+		}
+		country_leader = {
+			ideology = antiatlanticism
+		}
+	}
+
+	KOR_jeon_bong_jun = {
+		name = "Jeon Bong-jun"
+		portraits = {
+			civilian = {
+				large = "GFX_portrait_KOR_jeon_bong_jun"
 			}
 		}
 		country_leader = {

@@ -49,9 +49,33 @@ country_event = {
 		date > 1894.1.11
 	}
 	fire_only_once = yes
-	option = {
-		name = "The rebels will be crushed."
+	immediate = {
 		set_country_flag = donghak_revolution_happened
+		promote_character = KOR_jeon_bong_jun
+		start_civil_war = {
+			ideology = democratic
+			size = 0.5
+			set_cosmetic_tag = KOR_donghak
+		}
+	}
+	option = {
+		name = "Surely the Qing will help."
+		trigger = {
+			country_exists = QIN
+		}
+		ai_chance = {
+			add = 100
+			modifier = {
+				is_historical_focus_on = yes
+			}
+		}
+		QIN = {
+			country_event = KOR1859.6
+		}
+	}
+	option = {
+		name = "We can take care of this."
+		add_war_support = 0.05
 	}
 }
 
@@ -101,5 +125,96 @@ country_event = {
 	option = {
 		name = "Great!"
 		retire_character = KOR_choe_je_u
+	}
+}
+
+country_event = {
+	id = KOR1859.6
+	title = "[FROM.GetNonIdeologyName] Requests Support Against Donghak"
+	desc = KOR1859.6.d
+	picture = GFX_idi_amin_india
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = "Let's help them."
+		ai_will_do = {
+			base = 0
+			modifier = {
+				is_historical_focus_on = yes
+				add = 100
+			}
+		}
+		every_country = {
+			limit = {
+				original_tag = KOR
+				has_war_with = FROM
+			}
+			ROOT = {
+				add_to_war = {
+					targeted_alliance = FROM
+					enemy = PREV
+					hostility_reason = asked_to_join
+				}
+			}
+		}
+		add_war_support = 0.05
+		if = {
+			limit = {
+					has_idea = convention_of_tientsin
+			}
+			hidden_effect = {
+				every_other_country = {
+					limit = {
+						has_idea = convention_of_tientsin
+					}
+					country_event = KOR1859.8
+				}
+			}
+		}
+	}
+	option = {
+		name = "Deal with it yourself."
+		add_stability = 0.05
+		KOR = {
+			country_event = KOR1859.7
+		}
+	}
+}
+
+country_event = {
+	id = KOR1859.7
+	title = "[FROM.GetNonIdeologyName] Declines Request to Support Against Donghak"
+	desc = KOR1859.7.d
+	picture = GFX_idi_amin_india
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = "Okay"
+		add_war_support = -0.05
+	}
+}
+
+country_event = {
+	id = KOR1859.8
+	title = "[FROM.GetNonIdeologyName] Violates Convention of Tientsin"
+	desc = KOR1859.8.d
+	picture = GFX_idi_amin_india
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = "This is an act of war!"
+		add_war_support = 0.05
+		declare_war_on = {
+			target = FROM
+			type = annex_everything
+		}
+		declare_war_on = {
+			target = FROM.FROM
+			type = annex_everything
+		}
+	}
+	option = {
+		name = "Okay"
+		add_war_support = -0.05
 	}
 }
