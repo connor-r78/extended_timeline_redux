@@ -16,6 +16,14 @@ spriteTypes = {
 		texturefile = "gfx/leaders/KOR/portrait_jeon_bong_jun.dds"
 	}
 	spriteType = {
+		name = "GFX_portrait_KOR_kim_okkyun"
+		texturefile = "gfx/leaders/KOR/portrait_kim_okkyun.dds"
+	}
+	spriteType = {
+		name = "GFX_portrait_KOR_kim_okkyun_small"
+		texturefile = "gfx/interface/ideas/kim_okkyun_small.dds"
+	}
+	spriteType = {
 		name = "GFX_portrait_RUS_georgy_lvov"
 		texturefile = "gfx/leaders/RUS/portrait_georgy_lvov.dds"
 	}

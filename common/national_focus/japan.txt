@@ -15,6 +15,82 @@
 	continuous_focus_position = { x = 20 y = 1700 }
 
 	focus = {
+		id = JAP_meiji_restoration
+		icon = GFX_goal_tfv_strengthen_commonwealth_ties
+
+		x = 12
+		y = 0
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		allow_branch = {
+			
+		}
+
+		available = {
+			RUS = {
+				controls_state = 745
+			}
+		}
+
+		bypass = {
+			NOT = {
+				controls_state = 745
+			}
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			set_politics = {
+				ruling_party = neutrality
+				elections_allowed = no
+			}
+		}
+	}
+
+	focus = {
+		id = JAP_coup_in_korea
+		icon = GFX_goal_generic_major_war
+
+		x = 0
+		y = 1
+		relative_position_id = JAP_meiji_restoration
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		prerequisite = { focus = JAP_meiji_restoration }
+
+		available = {
+			any_country = {
+				has_war = yes
+				has_subject = KOR
+			}
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			set_politics = {
+				ruling_party = neutrality
+				elections_allowed = no
+			}
+		}
+	}
+
+	focus = {
 		id = JAP_relinquish_liaodong
 		icon = GFX_goal_anschluss
 

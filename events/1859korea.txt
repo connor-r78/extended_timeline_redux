@@ -1,8 +1,9 @@
 add_namespace = KOR1859
+add_namespace = KOR1859_news
 
 country_event = {
 	id = KOR1859.1
-	title = "[KOR.KOR_choe_je_u.GetName] Experiences Revelation"
+	title = "[KOR_choe_je_u.GetName] Experiences Revelation"
 	desc = KOR1859.1.d
 	picture = GFX_idi_amin_india
 	trigger = {
@@ -63,10 +64,11 @@ country_event = {
 		trigger = {
 			country_exists = QIN
 		}
-		ai_chance = {
-			add = 100
+		ai_will_do = {
+			base = 0
 			modifier = {
 				is_historical_focus_on = yes
+				add = 100
 			}
 		}
 		QIN = {
@@ -81,7 +83,7 @@ country_event = {
 
 country_event = {
 	id = KOR1859.3
-	title = "[KOR.KOR_choe_je_u.GetName] is Arrested"
+	title = "[KOR_choe_je_u.GetName] is Arrested"
 	desc = KOR1859.3.d
 	picture = GFX_idi_amin_india
 	is_triggered_only = yes
@@ -99,7 +101,7 @@ country_event = {
 
 country_event = {
 	id = KOR1859.4
-	title = "[KOR.KOR_choe_je_u.GetName] is Brought to Trial"
+	title = "[KOR_choe_je_u.GetName] is Brought to Trial"
 	desc = KOR1859.4.d
 	picture = GFX_idi_amin_india
 	is_triggered_only = yes
@@ -117,7 +119,7 @@ country_event = {
 
 country_event = {
 	id = KOR1859.5
-	title = "[KOR.KOR_choe_je_u.GetName] is Beheaded"
+	title = "[KOR_choe_je_u.GetName] is Beheaded"
 	desc = KOR1859.5.d
 	picture = GFX_idi_amin_india
 	is_triggered_only = yes
@@ -224,13 +226,86 @@ country_event = {
 	title = "Kapsin Coup"
 	desc = KOR1859.9.d
 	picture = GFX_idi_amin_india
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = "Let's hand them power."
+		trigger = {
+			any_character = {
+				has_ideology = liberalism
+				is_hired_as_advisor = yes
+			}
+		}
+		add_stability = -0.1
+		random_character = {
+			limit = {
+				has_ideology = liberalism
+				is_hired_as_advisor = yes
+			}
+			ROOT = {
+				promote_character = PREV
+			}
+		}
+		set_politics = {
+			ruling_party = democratic
+			elections_allowed = no
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				is_historical_focus_on = yes
+				add = 100
+			}
+		}
+	}
+	option = {
+		name = "We'll never surrender."
+		add_stability = -0.05
+		start_civil_war = {
+			ideology = democratic
+			size = 0.5
+		}
+	}
+}
+
+country_event = {
+	id = KOR1859.10
+	title = "[KOR_kim_okkyun.GetName] Ranks Changwon Kŭpchae"
+	desc = KOR1859.10.d
+	picture = GFX_idi_amin_india
 	trigger = {
-		
+		original_tag = KOR
+		date > 1864.1.1
 	}
 	fire_only_once = yes
 	option = {
-		name = "We Don't Want to Be Like Japan!"
-		add_stability = -0.05
-		
+		name = "Interesting"
+		set_country_flag = kim_okkyun_took_national_civil_service_exam
+		custom_effect_tooltip = KOR1859.10.a.tt
 	}
+}
+
+news_event = {
+	id = KOR1859_news.1
+	title = "Kim Okkyun is Assasinated"
+	desc = KOR1859_news.1.d
+	picture = GFX_idi_amin_india
+	is_triggered_only = yes
+	major = yes
+	fire_only_once = yes
+	immediate = {
+		retire_character = KOR_kim_okkyun
+	}
+	option = {
+        name = "Horrible..."
+        trigger = {
+			NOT = {
+				tag = FROM
+			}
+		}
+    }
+	option = {
+        name = "Just as planned!"
+        original_recipient_only = yes
+    }
 }

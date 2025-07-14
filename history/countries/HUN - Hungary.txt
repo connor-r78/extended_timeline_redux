@@ -13,6 +13,14 @@ set_technology = {
 		end_civil_wars = no
 	}
 }
+1918.10.29 = {
+	set_autonomy = {
+		target = CRO
+		autonomous_state = autonomy_free
+		end_wars = no
+		end_civil_wars = no
+	}
+}
 
 
 1789.1.1 = {

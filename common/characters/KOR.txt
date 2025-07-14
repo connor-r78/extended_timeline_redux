@@ -34,5 +34,31 @@ characters = {
 			ideology = antiatlanticism
 		}
 	}
+
+	KOR_kim_okkyun = {
+		name = "Kim Okkyun"
+		portraits = {
+			civilian = {
+				large = "GFX_portrait_KOR_kim_okkyun"
+				small = "GFX_portrait_KOR_kim_okkyun_small"
+			}
+		}
+		country_leader = {
+			ideology = liberalism
+		}
+		advisor = {
+            slot = political_advisor
+			idea_token = KOR_kim_okkyun
+            traits = { democratic_reformer }
+			visible = {
+				has_start_date < 1894.3.28 # Date of his assasination
+				OR = {
+					has_start_date > 1864.1.1
+					has_country_flag = kim_okkyun_took_national_civil_service_exam
+				}
+				date < 1951.1.1 # Event should take care of his assasination or he could live a long, prosperous life
+			}
+        }
+	}
 }
 
