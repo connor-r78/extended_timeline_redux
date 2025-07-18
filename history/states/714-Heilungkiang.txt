@@ -4,7 +4,8 @@ state={
 	name="STATE_714"
 
 	history={
-		owner = ZZZ
+		owner = EVE
+		add_core_of = EVE
 		1700.1.1 = {
         owner = QIN
 		add_core_of = QIN

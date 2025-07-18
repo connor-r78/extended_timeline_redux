@@ -1,0 +1,57 @@
+add_namespace = KOR1600
+
+country_event = {
+	id = KOR1600.1
+	title = "[KOR_yi_kwal.GetName]'s Rebellion"
+	desc = KOR1600.1.d
+	picture = GFX_idi_amin_india
+	trigger = {
+		date > 1624.1.22
+	}
+	fire_only_once = yes
+	option = {
+		name = "Worrisome..."
+		start_civil_war = {
+			ideology = democratic
+			keep_all_characters = yes
+			PREV = {
+				KOR_yi_kwal = {
+					set_nationality = PREV.PREV
+				}
+			}
+			promote_character = KOR_yi_kwal
+			set_cosmetic_tag = KOR_yi_kwal_rebellion
+		}
+	}
+}
+
+country_event = {
+	id = KOR1600.2
+	title = "[FROM.FROM.GetLeader] Killed By Own Troops"
+	desc = KOR1600.2.d
+	picture = GFX_idi_amin_india
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = "Good Riddance!"
+		FROM.FROM = {
+			kill_country_leader = yes
+		}
+	}
+}
+
+country_event = {
+	id = KOR1600.3
+	title = "[FROM.FROM.GetAdjective] Rebels Suggest Invasion of [FROM.GetNonIdeologyName]"
+	desc = KOR1600.3.d
+	picture = GFX_idi_amin_india
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = "We'll think about it..."
+		create_wargoal = {
+			type = puppet_wargoal_focus
+			target = FROM
+		}
+	}
+}

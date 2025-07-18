@@ -12,7 +12,7 @@
 
 	default = no
 
-	continuous_focus_position = { x = 20 y = 1700 }
+	continuous_focus_position = { x = 20 y = 2600 }
 
 	focus = {
 		id = JAP_meiji_restoration
@@ -83,9 +83,8 @@
 		available_if_capitulated = no
 
 		completion_reward = {
-			set_politics = {
-				ruling_party = neutrality
-				elections_allowed = no
+			KOR = {
+				country_event = KOR1859.9
 			}
 		}
 	}

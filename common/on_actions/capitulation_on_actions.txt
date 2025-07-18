@@ -1,0 +1,22 @@
+on_actions = {
+	on_civil_war_end_before_annexation = {
+		effect = {
+			if = {
+				limit = {
+					FROM = {
+						has_cosmetic_tag = KOR_yi_kwal_rebellion
+					}
+				}
+				country_event = KOR1600.2
+				if = {
+					limit = {
+						country_exists = QIN
+					}
+					QIN = {
+						country_event = KOR1600.3
+					}
+				}
+			}
+		}
+	}
+}

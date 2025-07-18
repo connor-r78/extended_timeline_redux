@@ -21,6 +21,7 @@ recruit_character = KOR_choe_je_u
 recruit_character = KOR_choe_si_hyeong
 recruit_character = KOR_jeon_bong_jun
 recruit_character = KOR_kim_okkyun
+recruit_character = KOR_yi_kwal
 
 1936.1.1 = {
 	oob = "KOR_1936"

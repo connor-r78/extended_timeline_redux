@@ -1,5 +1,4 @@
 
-
 RUK	= "countries/Reichskommissariatukraine.txt"
 RBL	= "countries/Reichskommissariatbelarus.txt"
 RLA	= "countries/Reichskommissariatlatvia.txt"

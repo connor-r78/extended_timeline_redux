@@ -207,12 +207,19 @@ country_event = {
 		name = "This is an act of war!"
 		add_war_support = 0.05
 		declare_war_on = {
-			target = FROM
+			target = FROM # China
 			type = annex_everything
 		}
-		declare_war_on = {
-			target = FROM.FROM
-			type = annex_everything
+		set_country_flag = japan_in_first_sino_japanese_war
+		FROM = {
+			set_country_flag = china_in_first_sino_japanese_war
+		}
+		ai_will_do = {
+			base = 1
+			modifier = {
+				is_historical_focus_on = yes
+				add = 100
+			}
 		}
 	}
 	option = {
@@ -250,6 +257,17 @@ country_event = {
 			ruling_party = democratic
 			elections_allowed = no
 		}
+		hidden_effect = {
+			if = {
+				limit = {
+					democratic < 0.5
+				}
+				country_event = {
+					id = KOR1859.11
+					days = 2
+				}
+			}
+		}
 		ai_will_do = {
 			base = 0
 			modifier = {
@@ -285,6 +303,115 @@ country_event = {
 	}
 }
 
+country_event = {
+	id = KOR1859.11
+	title = "New Government Fails"
+	desc = KOR1859.11.d
+	picture = GFX_idi_amin_india
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = "Bring Back Joseon!"
+		set_politics = {
+			ruling_party = neutrality
+			elections_allowed = no
+		}
+		custom_effect_tooltip = "$OVERLORDDEF$ and [FROM.FROM.GetNameDefCap] will meet at the Convention of Tientsin."
+		hidden_effect = {
+			overlord = { # Qing China historically
+				country_event = KOR1859.12
+			}
+			FROM.FROM = { # Japan historically
+				country_event = KOR1859.13
+			}
+		}
+	}
+}
+
+country_event = {
+	id = KOR1859.12
+	title = "Convention of Tientsin"
+	desc = KOR1859.12.d
+	picture = GFX_idi_amin_india
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = "Agreeable Terms"
+		add_ideas = convention_of_tientsin
+	}
+}
+
+country_event = {
+	id = KOR1859.13
+	title = "Convention of Tientsin"
+	desc = KOR1859.13.d
+	picture = GFX_idi_amin_india
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = "Agreeable Terms"
+		add_ideas = convention_of_tientsin
+	}
+}
+
+country_event = {
+	id = KOR1859.14
+	title = "War Situation Deteriorates"
+	desc = KOR1859.14.d
+	picture = GFX_idi_amin_india
+	trigger = {
+		has_country_flag = china_in_first_sino_japanese_war
+		any_state = {
+			is_owned_by = ROOT
+			NOT = {
+				is_controlled_by = ROOT
+			}
+			naval_base > 0
+			any_state = {
+				is_owned_by = ROOT
+				NOT = {
+					is_controlled_by = ROOT
+					id = PREV
+				}
+				naval_base > 0
+			}
+		}
+	}
+	fire_only_once = yes
+	option = {
+		name = "Sue For Peace"
+		every_country = {
+			limit = {
+				has_war_with = ROOT
+				has_country_flag = japan_in_first_sino_japanese_war
+			}
+			QIN = {
+				white_peace = PREV
+			}
+			country_event = KOR1859.15
+		}
+	}
+}
+
+country_event = {
+	id = KOR1859.15
+	title = "Treaty of Shimonoseki"
+	desc = KOR1859.15.d
+	picture = GFX_idi_amin_india
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = "Great"
+		every_country = {
+			limit = {
+				has_war_with = ROOT
+				has_country_flag = japan_in_first_sino_japanese_war
+			}
+			country_event = KOR1859.15
+		}
+	}
+}
+
 news_event = {
 	id = KOR1859_news.1
 	title = "Kim Okkyun is Assasinated"
@@ -298,14 +425,5 @@ news_event = {
 	}
 	option = {
         name = "Horrible..."
-        trigger = {
-			NOT = {
-				tag = FROM
-			}
-		}
-    }
-	option = {
-        name = "Just as planned!"
-        original_recipient_only = yes
     }
 }

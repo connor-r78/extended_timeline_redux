@@ -7,8 +7,11 @@ state={
 	}
 
 	history={
-        owner = QIN
-		add_core_of = QIN
+        owner = MEN
+		add_core_of = MEN
+		1700.1.1 = {
+			owner = QIN
+		}
 		1900.1.1 = {
 		add_core_of = CHI
 		remove_core_of = MNG

@@ -360,39 +360,54 @@ ideologies = {
 		types = {
 
 			viceregalism = {
+				can_be_randomly_selected = no
+			}
+
+			generic_monarchy = {
 			}
 
 			angevin = {
+				can_be_randomly_selected = no
 			}
 
 			bonaparte = {
+				can_be_randomly_selected = no
 			}
 
 			bourbon = {
+				can_be_randomly_selected = no
 			}
 
 			capet = {
+				can_be_randomly_selected = no
 			}
 
 			wettin = {
+				can_be_randomly_selected = no
 			}
 
 			oldenburg = {
+				can_be_randomly_selected = no
 			}
 
 			obertenghi = {
+				can_be_randomly_selected = no
 			}
 
 			metz = {
+				can_be_randomly_selected = no
 			}
 
 			skoropadskyi = {
+				can_be_randomly_selected = no
 			}
 
 			stuart = {
+				can_be_randomly_selected = no
 			}
 
 			tudor = {
+				can_be_randomly_selected = no
 			}
 			
 		}
