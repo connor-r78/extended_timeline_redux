@@ -1,0 +1,49 @@
+add_namespace = RUS1859
+
+country_event = {
+	id = RUS1859.1
+	title = "[FROM.GetNonIdeologyName] Seeks Lease of [745.GetName]"
+	desc = RUS1859.1.d
+	picture = GFX_idi_amin_india
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = "We have no choice..."
+		create_dynamic_country = {
+			original_tag = ROOT
+			copy_tag = FROM
+			transfer_state = 745
+
+			set_cosmetic_tag = RUS_dalian
+			transfer_state = 745
+			RUS_fyodor_dubasov = {
+				set_nationality = PREV
+			}
+		}
+		FROM = {
+			country_event = {
+				id = RUS1859.2
+				days = 9125
+			}
+		}
+	}
+}
+
+country_event = {
+	id = RUS1859.2
+	title = "Lease of [745.GetName] Expires"
+	desc = RUS1859.2.d
+	picture = GFX_idi_amin_india
+	trigger = {
+		745 = {
+			is_owned_by = ROOT
+		}
+	}
+	fire_only_once = yes
+	option = {
+		name = "Okay"
+		745 = {
+			transfer_state_to = FROM
+		}
+	}
+}

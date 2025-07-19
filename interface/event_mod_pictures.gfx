@@ -1,5 +1,21 @@
 spriteTypes = {
 	spriteType = {
+		name = "GFX_portrait_SOV_vyacheslav_molotov"
+		texturefile = "gfx/leaders/SOV/portrait_vyacheslav_molotov.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_soviet_generic_advisor"
+		texturefile = "gfx/interface/ideas/soviet_generic_advisor.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_hryhoriy_hyrnko"
+		texturefile = "gfx/interface/ideas/hryhoriy_hyrnko_small.dds"
+	}
+	spriteType = {
+		name = "SOV_andrey_vyshinsky"
+		texturefile = "gfx/interface/ideas/andrey_vyshinsky_small.dds"
+	}
+	spriteType = {
 		name = "GFX_portrait_CRO_ferenc_balassa"
 		texturefile = "gfx/leaders/CRO/portrait_ferenc_balassa.dds"
 	}
@@ -26,6 +42,10 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_portrait_RUS_georgy_lvov"
 		texturefile = "gfx/leaders/RUS/portrait_georgy_lvov.dds"
+	}
+	spriteType = {
+		name = "GFX_portrait_RUS_fyodor_dubasov"
+		texturefile = "gfx/leaders/RUS/portrait_fyodor_dubasov.dds"
 	}
 	spriteType = {
 		name = "GFX_portrait_ENG_henry_vi"

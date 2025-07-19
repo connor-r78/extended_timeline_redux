@@ -1,0 +1,19 @@
+ideas = {
+
+	country = {
+	
+		RUS_great_siberian_route = {
+			
+			allowed = {
+				always = no
+			}
+			
+			modifier = {
+				production_speed_rail_way_factor = 0.5 
+			}
+		}
+
+	
+	}
+
+}

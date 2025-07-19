@@ -1,4 +1,35 @@
-﻿1917.11.7 = {
+﻿1922.4.3 = {
+	add_ideas = {
+		SOV_mikhail_kalinin_head_of_state
+		SOV_iosif_stalin
+	}
+}
+1925.11.6 = {
+	add_ideas = SOV_kliment_voroshilov_defense
+}
+1930.7.21 = {
+	add_ideas = SOV_maksim_litvinov_foreign
+}
+1930.12.19 = {
+	promote_character = SOV_vyacheslav_molotov
+}
+1934.7.10 = {
+	add_ideas = {
+		SOV_genrikh_yagoda_intel
+		SOV_genrikh_yagoda_internal
+	}
+}
+1935.3.3 = {
+	add_ideas = SOV_andrey_vyshinsky_procurator
+}
+1935.8.2 = {
+	add_ideas = { # Molotov III
+		SOV_ivan_miroshnikov_admin_of_affairs
+		SOV_hryhoriy_hyrnko_finance
+	}
+}
+
+1917.11.7 = {
 	complete_national_focus = RUS_bolshevik_coup
 }
 
@@ -25,7 +56,6 @@ set_oob = "SOV_1919"
 }
 }
 
-#You don't want Russian party names? Just remove these lines
 set_party_name = {
 	ideology = communism
 	long_name = SOV_communism_party_russian_long
@@ -37,9 +67,7 @@ set_party_name = {
 	name = SOV_fascism_party_russian
 }
 
-#COUNTRY LEADERS
-recruit_character = SOV_iosif_stalin
-recruit_character = SOV_supreme_soviet #This is a fake character! Proper country leader role is added via focus
+
 if = {
 	limit = {
 		has_dlc = "No Step Back"
@@ -48,7 +76,11 @@ if = {
 	set_country_flag = vlasov_owner_flag
 }
 
-#POLITICAL ADVISORS
+recruit_character = SOV_andrey_vyshinsky
+recruit_character = SOV_hryhoriy_hyrnko
+recruit_character = SOV_ivan_miroshnikov
+recruit_character = SOV_iosif_stalin
+recruit_character = SOV_supreme_soviet
 recruit_character = SOV_mikhail_kalinin
 recruit_character = SOV_nikita_khrushchyov
 recruit_character = SOV_nikolay_voznesensky
@@ -59,7 +91,6 @@ recruit_character = SOV_lavrenty_beriya
 recruit_character = SOV_vsevolod_merkulov
 recruit_character = SOV_vyacheslav_molotov
 recruit_character = SOV_maksim_litvinov
-
 recruit_character = SOV_lev_trotsky
 recruit_character = SOV_ivan_smirnov
 recruit_character = SOV_ivar_smilga
@@ -864,8 +895,6 @@ add_ideas = {
 	home_of_revolution
 	trotskyite_plot_nsb
 	SOV_politicized_military
-
-	SOV_genrikh_yagoda #NKVD Chief (political advisor)
 }
 }
 1939.1.1 = {

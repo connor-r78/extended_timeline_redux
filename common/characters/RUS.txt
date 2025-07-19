@@ -3,7 +3,18 @@ characters = {
 		name = "Georgy Lvov"
 		portraits = {
 			civilian = {
-				large = "GFX_portrait_rus_putin_large"
+				large = "GFX_portrait_RUS_georgy_lvov"
+			}
+		}
+		country_leader = {
+			ideology = despotism
+		}
+	}
+	RUS_fyodor_dubasov = {
+		name = "Fyodor Dubasov"
+		portraits = {
+			civilian = {
+				large = "GFX_portrait_RUS_fyodor_dubasov"
 			}
 		}
 		country_leader = {

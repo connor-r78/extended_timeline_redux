@@ -19,7 +19,7 @@
 	initial_show_position = {
 		x = 0
 	}
-	continuous_focus_position = { x = 2000 y = 2000 }
+	continuous_focus_position = { x = 1000 y = 2000 }
 	default = no
 		focus = {
 		id = russianempirerework_althistory_1
@@ -344,17 +344,19 @@ mutually_exclusive = {focus = russianempirerework_1789_1815_first_100_focus_47  
 		search_filters = { FOCUS_FILTER_ALTHISTORY }
 		
 		completion_reward = { 
+			mark_focus_tree_layout_dirty = yes
 		}
 	}
-					focus = {
+	focus = {
 		id = russianempirerework_althistory_10
 		icon = GFX_focus_generic_treaty
-		x = 7
-		y = 11
+		x = 0
+		y = 1
 		cost = 4.3
 		ai_will_do = {
 			factor = 0
 		}
+		relative_position_id = russianempirerework_1793_1836_focus_30
 		prerequisite = {
 		focus =	russianempirerework_1793_1836_focus_30
 		}
@@ -4764,20 +4766,21 @@ mutually_exclusive = { focus =russianempirerework_althistory_9  }
 			50={
 			}
 		}
-					random_list = {
+			random_list = {
+					50={
+												199 = {
+							add_extra_state_shared_building_slots = 1
+							add_building_construction = {
+								type = arms_factory
+								level = 1
+								instant_build = yes
+							}
+					}
+					}
 				50={
-											199 = {
-                        add_extra_state_shared_building_slots = 1
-						add_building_construction = {
-							type = arms_factory
-							level = 1
-							instant_build = yes
-						}
 				}
-				}
-			50={
 			}
-		}
+			mark_focus_tree_layout_dirty = yes
 		}
 	}
 		focus = {
@@ -6275,13 +6278,59 @@ give_military_access = RUS
 		available_if_capitulated = no
 		
 		completion_reward = {
-			RUS={
-				set_autonomy = {
-					target = GEO
-					autonomous_state = autonomy_protectorate
-					freedom_level = 0.35
-	            }
+		}
+	}
+
+	focus = {
+		id = RUS_great_siberian_route
+		icon = GFX_goal_generic_construct_infrastructure
+        prerequisite = { focus = RUS_continue_eastern_expansion }
+		relative_position_id = RUS_continue_eastern_expansion
+		x = -1
+		y = 1
+
+		cost = 4.3
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			RUS = {
+				add_ideas = RUS_great_siberian_route
 			}
+		}
+	}
+
+	focus = {
+		id = RUS_pavlov_agreement
+		icon = GFX_goal_generic_forceful_treaty
+        prerequisite = { focus = RUS_continue_eastern_expansion }
+		relative_position_id = RUS_continue_eastern_expansion
+		x = 1
+		y = 1
+
+		cost = 4.3
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		completion_reward = {
+			every_country = {
+				limit = {
+					owns_state = 745
+				}
+			}
+			country_event = RUS1859.1
 		}
 	}
 
@@ -12229,7 +12278,7 @@ focus = {
 		id = SOV_infrastructure_effort_nsb
 
 		icon = GFX_SOV_infrastructure_effort_nsb_ccp_2d_sov_compatibility
-		x = -30
+		x = -50
 		y = 20
 		cost = 5
 
@@ -19112,9 +19161,9 @@ focus = {
 	focus = {
 		id = RUS_humiliation_in_japan
 		icon = GFX_SOV_an_adaptable_army_ccp_2d_sov_compatibility
-		x = 30
-		y = 0
-		relative_position_id = SOV_strengthen_the_mobilization_plan
+		x = 2
+		y = 1
+		relative_position_id = RUS_pavlov_agreement
 
 		offset = {
 			x = -8
@@ -19257,11 +19306,12 @@ focus = {
 				}
 				NOT = { has_completed_focus = SOV_beaten_but_not_defeated }
 			}
-			if = {
-				limit = {
-					tag = RUS
+			OR = {
+				tag = SOV
+				OR = {
+					has_country_flag = lost_russo_japanese_war
+					has_completed_focus = RUS_humiliation_in_japan
 				}
-				has_country_flag = lost_russo_japanese_war
 			}
 		}
 
@@ -19331,11 +19381,12 @@ focus = {
 					}
 				}
 			}
-			if = {
-				limit = {
-					tag = RUS
+			OR = {
+				tag = SOV
+				OR = {
+					has_country_flag = lost_russo_japanese_war
+					has_completed_focus = RUS_humiliation_in_japan
 				}
-				has_country_flag = lost_russo_japanese_war
 			}
 		}
 
@@ -19375,8 +19426,8 @@ focus = {
 		id = SOV_socialism_in_one_country
 		icon = GFX_focus_SOV_socialism_in_one_country
 		prerequisite = { focus = SOV_the_centre }
-		x = -1
-		y = 1
+		x = -2
+		y = 3
 		relative_position_id = SOV_the_centre
 		cost = 5
 
@@ -19558,8 +19609,8 @@ focus = {
 		icon = GFX_focus_prc_agrarian_socialism
 		prerequisite = { focus = SOV_socialism_in_one_country }
 		prerequisite = { focus = SOV_secure_the_administration }
-		x = 0
-		y = 3
+		x = 1
+		y = 1
 		relative_position_id = SOV_socialism_in_one_country
 		cost = 10
 
@@ -19693,8 +19744,8 @@ focus = {
 		id = SOV_the_anti_soviet_trotskyist_center
 		icon = GFX_focus_SOV_purge_trotskyists
 		prerequisite = { focus = SOV_the_zinovyevite_terrorist_center }
-		x = 0
-		y = 2
+		x = 3
+		y = 1
 		relative_position_id = SOV_the_zinovyevite_terrorist_center
 		cost = 5
 
@@ -19845,7 +19896,7 @@ focus = {
 		icon = GFX_focus_SOV_organization_centralization_discipline
 		prerequisite = { focus = SOV_the_collectivization_process }
 		prerequisite = { focus = SOV_the_workers_dictatorship }
-		x = -2
+		x = -4
 		y = 1
 		relative_position_id = SOV_the_workers_dictatorship
 		cost = 5
@@ -19946,7 +19997,7 @@ focus = {
 		id = SOV_the_military_conspiracy
 		icon = GFX_focus_SOV_military_purge
 		prerequisite = { focus = SOV_the_workers_dictatorship }
-		x = 0
+		x = -1
 		y = 2
 		relative_position_id = SOV_the_anti_soviet_trotskyist_center
 		cost = 5
@@ -20044,7 +20095,7 @@ focus = {
 		id = SOV_the_bloc_of_rights_and_trotskyites
 		icon = GFX_focus_SOV_purge_bukharinists
 		prerequisite = { focus = SOV_the_military_conspiracy }
-		x = 0
+		x = -1
 		y = 1
 		relative_position_id = SOV_the_military_conspiracy
 		cost = 10
@@ -20142,7 +20193,7 @@ focus = {
 		id = SOV_behead_the_snake
 		icon = GFX_focus_SOV_behead_the_snake
 		prerequisite = { focus = SOV_the_military_conspiracy }
-		x = 2
+		x = 1
 		y = 1
 		relative_position_id = SOV_the_military_conspiracy
 		cost = 5
@@ -20770,11 +20821,12 @@ focus = {
 				NOT = { has_completed_focus = SOV_the_right_opposition }
 				NOT = { has_completed_focus = SOV_beaten_but_not_defeated }
 			}
-			if = {
-				limit = {
-					tag = RUS
+			OR = {
+				tag = SOV
+				OR = {
+					has_country_flag = lost_russo_japanese_war
+					has_completed_focus = RUS_humiliation_in_japan
 				}
-				has_country_flag = lost_russo_japanese_war
 			}
 		}
 		
@@ -21732,7 +21784,7 @@ focus = {
 		icon = GFX_goal_support_communism
 		prerequisite = { focus = SOV_system_decentralization }
 		x = 0
-		y = 1
+		y = 2
 		relative_position_id = SOV_system_decentralization
 		
 		cost = 10
@@ -21752,7 +21804,7 @@ focus = {
 		id = SOV_regional_development
 		icon = GFX_focus_generic_soviet_politics
 		prerequisite = { focus = SOV_all_power_to_the_soviets }
-		x = 0
+		x = -1
 		y = 1
 		relative_position_id = SOV_all_power_to_the_soviets
 		mutually_exclusive = { focus = SOV_strengthen_the_trade_unions }
@@ -22021,11 +22073,12 @@ focus = {
 					}
 				}
 			}
-			if = {
-				limit = {
-					tag = RUS
+			OR = {
+				tag = SOV
+				OR = {
+					has_country_flag = lost_russo_japanese_war
+					has_completed_focus = RUS_humiliation_in_japan
 				}
-				has_country_flag = lost_russo_japanese_war
 			}
 		}
 		mutually_exclusive = { focus = SOV_the_left_opposition focus = SOV_the_centre}
@@ -22285,11 +22338,12 @@ focus = {
 				NOT = { has_completed_focus = SOV_the_left_opposition }
 				NOT = { has_completed_focus = SOV_beaten_but_not_defeated }
 			}
-			if = {
-				limit = {
-					tag = RUS
+			OR = {
+				tag = SOV
+				OR = {
+					has_country_flag = lost_russo_japanese_war
+					has_completed_focus = RUS_humiliation_in_japan
 				}
-				has_country_flag = lost_russo_japanese_war
 			}
 		}
 		bypass = {
@@ -22659,7 +22713,7 @@ focus = {
 		prerequisite = { focus = SOV_curtailment_of_the_collective_farms }
 		mutually_exclusive = { focus = SOV_a_new_theory_of_revolution }
 		x = -4
-		y = 1
+		y = 2
 		relative_position_id = SOV_curtailment_of_the_collective_farms
 		cost = 10
 		available = {
@@ -22680,7 +22734,7 @@ focus = {
 		prerequisite = { focus = SOV_curtailment_of_the_collective_farms }
 		mutually_exclusive = { focus = SOV_administrative_reforms }
 		x = -2
-		y = 1
+		y = 2
 		relative_position_id = SOV_curtailment_of_the_collective_farms
 		cost = 10
 		available = {
@@ -22719,7 +22773,7 @@ focus = {
 		id = SOV_back_to_the_nep
 		icon = GFX_focus_generic_treaty
 		prerequisite = { focus = SOV_curtailment_of_the_collective_farms }
-		x = 1
+		x = 2
 		y = 1
 		relative_position_id = SOV_curtailment_of_the_collective_farms
 		cost = 10
@@ -23026,7 +23080,7 @@ focus = {
 		icon = GFX_focus_spr_unify_the_london_bureau
 		prerequisite = { focus = SOV_a_new_theory_of_revolution focus = SOV_administrative_reforms }
 		prerequisite = { focus = SOV_planned_economy }
-		x = 0
+		x = 1
 		y = 2
 		relative_position_id = SOV_a_new_theory_of_revolution
 		cost = 10
@@ -27920,17 +27974,6 @@ ai_will_do = {
 					option = HIDE
 				}
 				has_completed_focus = SOV_beaten_but_not_defeated
-			}
-		}
-		offset = {
-			x = -10
-			y = 0
-			trigger = {
-				has_game_rule = {
-					rule = obsolete_focus_branches_visibility
-					option = HIDE
-				}
-				has_completed_focus = SOV_the_hands_do #Stalinist branch hides
 			}
 		}
 		allow_branch = { 

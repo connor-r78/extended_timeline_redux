@@ -44,7 +44,6 @@ idea_categories = {
 		character_slot = justice_minister
 		character_slot = interior_minister
 		character_slot = intelligence_minister
-		character_slot = propaganda_minister
 		
 		ledger = civilian
 		

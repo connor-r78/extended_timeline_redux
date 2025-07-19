@@ -354,64 +354,6 @@ country_event = {
 	}
 }
 
-country_event = {
-	id = KOR1859.14
-	title = "War Situation Deteriorates"
-	desc = KOR1859.14.d
-	picture = GFX_idi_amin_india
-	trigger = {
-		has_country_flag = china_in_first_sino_japanese_war
-		any_state = {
-			is_owned_by = ROOT
-			NOT = {
-				is_controlled_by = ROOT
-			}
-			naval_base > 0
-			any_state = {
-				is_owned_by = ROOT
-				NOT = {
-					is_controlled_by = ROOT
-					id = PREV
-				}
-				naval_base > 0
-			}
-		}
-	}
-	fire_only_once = yes
-	option = {
-		name = "Sue For Peace"
-		every_country = {
-			limit = {
-				has_war_with = ROOT
-				has_country_flag = japan_in_first_sino_japanese_war
-			}
-			QIN = {
-				white_peace = PREV
-			}
-			country_event = KOR1859.15
-		}
-	}
-}
-
-country_event = {
-	id = KOR1859.15
-	title = "Treaty of Shimonoseki"
-	desc = KOR1859.15.d
-	picture = GFX_idi_amin_india
-	is_triggered_only = yes
-	fire_only_once = yes
-	option = {
-		name = "Great"
-		every_country = {
-			limit = {
-				has_war_with = ROOT
-				has_country_flag = japan_in_first_sino_japanese_war
-			}
-			country_event = KOR1859.15
-		}
-	}
-}
-
 news_event = {
 	id = KOR1859_news.1
 	title = "Kim Okkyun is Assasinated"

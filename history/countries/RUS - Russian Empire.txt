@@ -43,6 +43,12 @@
 1860.1.1 = {
 	complete_national_focus = RUS_continue_eastern_expansion
 }
+1891.3.9 = {
+	complete_national_focus = RUS_great_siberian_route
+}
+1898.3.27 = {
+	complete_national_focus = RUS_pavlov_agreement
+}
 1905.9.5 = {
 	complete_national_focus = RUS_humiliation_in_japan
 }
@@ -51,6 +57,37 @@
 }
 1917.11.7 = {
 	complete_national_focus = RUS_bolshevik_coup
+}
+
+1898.3.27 = {
+	create_dynamic_country = {
+		original_tag = RUS
+		copy_tag = QIN
+		transfer_state = 745
+
+		set_cosmetic_tag = RUS_dalian
+		transfer_state = 745
+		RUS = {
+			set_nationality = {
+				character = RUS_fyodor_dubasov
+				target_country = PREV
+			}
+			set_autonomy = {
+				target = PREV
+				autonomous_state = autonomy_colony
+				end_wars = no
+				end_civil_wars = no
+			}
+		}
+		set_politics = {
+			ruling_party = authoritarianism
+			elections_allowed = no
+		}
+		set_popularities = {
+			authoritarianism = 100
+		}
+		promote_character = RUS_fyodor_dubasov
+	}
 }
 
 1786.1.1 = {
@@ -62,6 +99,7 @@
 }
 
 recruit_character = RUS_georgy_lvov
+recruit_character = RUS_fyodor_dubasov
 
 1789.1.1 = {
 			if = {

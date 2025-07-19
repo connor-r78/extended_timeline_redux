@@ -90,50 +90,11 @@
 	}
 
 	focus = {
-		id = JAP_relinquish_liaodong
-		icon = GFX_goal_anschluss
-
-		x = 14
-		y = 0
-
-		cost = 10
-
-		ai_will_do = {
-			factor = 2
-		}
-
-		allow_branch = {
-			
-		}
-
-		available = {
-			RUS = {
-				controls_state = 745
-			}
-		}
-
-		bypass = {
-			controls_state = 745
-		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		completion_reward = {
-			
-		}
-	}
-
-	focus = {
 		id = JAP_strike_port_arthur
 		icon = GFX_goal_generic_major_war
 
-		x = 0
+		x = 14
 		y = 1
-
-		prerequisite = { focus = JAP_relinquish_liaodong }
-		relative_position_id = JAP_relinquish_liaodong
 
 		cost = 10
 
@@ -142,12 +103,28 @@
 		}
 
 		allow_branch = {
-			
+			OR = {
+				any_country = {
+					OR = {
+						tag = RUS
+						is_subject_of = RUS
+					}
+					controls_state = 745
+				}
+				has_completed_focus = JAP_strike_port_arthur
+			}
 		}
 
 		available = {
-			RUS = {
-				controls_state = 745
+			OR = {
+				any_country = {
+					OR = {
+						tag = RUS
+						is_subject_of = RUS
+					}
+					controls_state = 745
+				}
+				has_completed_focus = JAP_strike_port_arthur
 			}
 		}
 
